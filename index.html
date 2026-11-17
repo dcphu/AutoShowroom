@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUTOLUX MOTORS | Showroom Xe Sang & Siêu Xe Hàng Đầu Việt Nam</title>
-    
+
     <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    
+
     <!-- Custom Clean Professional Automotive Styling -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
 
     <!-- Toast Notification Container -->
     <div id="toastContainer" class="toast-container-custom"></div>
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Announcement Bar (Sáng & Tinh tế) -->
     <div class="top-bar-light py-2">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center small">
                 <div class="d-flex align-items-center gap-3">
-                    <span><i class="fa-solid fa-location-dot text-warning me-1"></i> Hệ thống Showroom: Hà Nội • Đà Nẵng • TP. HCM</span>
+                    <span><i class="fa-solid fa-location-dot text-warning me-1"></i> Hệ thống Showroom: Hà Nội • Đà Nẵng
+                        • TP. HCM</span>
                     <span class="d-none d-md-inline text-muted">• Giờ mở cửa: 08:00 - 21:00 hàng ngày</span>
                 </div>
                 <div class="d-flex align-items-center gap-3">
@@ -39,21 +42,22 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-luxury sticky-top">
         <div class="container">
-            <a class="brand-logo" href="#top" id="brandLogo" title="AutoLux Motors (Nhấp đúp để vào cổng nhân viên)">
+            <a class="brand-logo" href="index.html" id="brandLogo" title="AutoLux Motors">
                 <div class="brand-icon">
                     <i class="fa-solid fa-shield-cat"></i>
                 </div>
                 <div>AUTOLUX <span class="highlight">MOTORS</span></div>
             </a>
-            
-            <button class="navbar-toggler border-secondary text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+
+            <button class="navbar-toggler border-secondary text-dark" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navContent">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link nav-link-luxury active" href="#top">Trang Chủ</a>
+                        <a class="nav-link nav-link-luxury active" href="index.html">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-luxury" href="#collection">Bộ Sưu Tập Xe</a>
@@ -71,18 +75,20 @@
                         <a class="nav-link nav-link-luxury" href="#contact">Liên Hệ</a>
                     </li>
                 </ul>
-                
+
                 <div class="d-flex align-items-center gap-2">
                     <a href="#booking" class="btn-gold">
                         <i class="fa-solid fa-key"></i> Đặt Lịch Lái Thử
                     </a>
-                    <button type="button" class="btn btn-outline-warning btn-sm rounded-pill px-3 py-2 text-dark fw-bold border-warning d-flex align-items-center gap-1 shadow-sm" onclick="openAdminLogin()" title="Cổng Quản Trị Showroom">
-                        <i class="fa-solid fa-user-shield text-warning"></i> <span>Admin</span>
-                    </button>
+                    <a href="login.html" class="btn btn-outline-warning btn-sm rounded-pill px-3 py-2 text-dark fw-bold border-warning shadow-sm" title="Cổng Quản Trị">
+                        <i class="fa-solid fa-user-shield me-1"></i> Admin
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
+
+
 
     <!-- Hero Section Sáng Bắt Mắt -->
     <header class="hero-section" id="top">
@@ -97,9 +103,10 @@
                         Chinh Phục Mọi Cung Đường
                     </h1>
                     <p class="hero-subtitle">
-                        AutoLux tự hào là điểm đến tin cậy của hơn 5.000 chủ nhân tinh hoa. Cung cấp các dòng xe sang, siêu xe, và xe điện cao cấp nhập khẩu chính hãng với bảo hành 5 năm không giới hạn km.
+                        AutoLux tự hào là điểm đến tin cậy của hơn 5.000 chủ nhân tinh hoa. Cung cấp các dòng xe sang,
+                        siêu xe, và xe điện cao cấp nhập khẩu chính hãng với bảo hành 5 năm không giới hạn km.
                     </p>
-                    
+
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#booking" class="btn-gold">
                             <i class="fa-solid fa-car-side"></i> Đăng Ký Lái Thử Miễn Phí
@@ -108,7 +115,7 @@
                             <i class="fa-solid fa-compass"></i> Khám Phá Showroom
                         </a>
                     </div>
-                    
+
                     <div class="hero-metrics">
                         <div class="metric-item">
                             <div class="metric-val text-warning">100%</div>
@@ -124,13 +131,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="hero-visual">
                         <div class="hero-car-wrapper">
                             <img src="./images/car-1.jpg" alt="Mercedes-AMG GT 63 S" class="hero-car-img">
                         </div>
-                        
+
                         <div class="hero-floating-card">
                             <div class="d-flex align-items-center gap-3">
                                 <div class="rounded-circle bg-warning bg-opacity-25 p-3 text-warning">
@@ -159,8 +166,8 @@
                         <span class="input-group-text bg-warning-subtle border-warning-subtle text-warning-emphasis">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
-                        <input type="text" id="filterKeyword" class="form-control filter-input" 
-                               placeholder="Tìm xe: AMG, Taycan, VinFast, V8...">
+                        <input type="text" id="filterKeyword" class="form-control filter-input"
+                            placeholder="Tìm xe: AMG, Taycan, VinFast, V8...">
                     </div>
                 </div>
 
@@ -198,7 +205,8 @@
             </div>
 
             <!-- Category Pills -->
-            <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-secondary border-opacity-25" id="categoryPills">
+            <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-secondary border-opacity-25"
+                id="categoryPills">
                 <button type="button" class="category-pill active" data-category="all">
                     <i class="fa-solid fa-border-all"></i> Tất cả các dòng
                 </button>
@@ -232,7 +240,8 @@
                     <h2 class="text-dark fw-bold mt-1 mb-0">Các Dòng Xe Tuyển Chọn</h2>
                 </div>
                 <div class="text-dark small fw-bold">
-                    Hiển thị <span class="badge bg-warning text-dark fs-6 px-3 py-1 shadow-sm" id="carsCountBadge">9</span> mẫu xe cao cấp
+                    Hiển thị <span class="badge bg-warning text-dark fs-6 px-3 py-1 shadow-sm"
+                        id="carsCountBadge">9</span> mẫu xe cao cấp
                 </div>
             </div>
 
@@ -240,65 +249,88 @@
             <div class="row g-4" id="carsGrid">
 
                 <!-- Car 1 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="1" data-category="sport" data-brand="Mercedes-Benz" data-price="12500000000" data-name="Mercedes-AMG GT 63 S E-Performance">
+                <div class="col-lg-4 col-md-6 car-item" data-id="1" data-category="sport" data-brand="Mercedes-Benz"
+                    data-price="12500000000" data-name="Mercedes-AMG GT 63 S E-Performance">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-1.jpg" alt="Mercedes-AMG GT 63 S" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Siêu phẩm AMG</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Siêu phẩm
+                                AMG</span>
                             <span class="car-category-tag text-uppercase">sport</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Mercedes-Benz</div>
                             <h3 class="car-title">Mercedes-AMG GT 63 S E-Performance</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.0L V8 Biturbo + Motor điện</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>843 mã lực / 1.470 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>2.9 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>AMG SPEEDSHIFT MCT 9G</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.0L V8
+                                        Biturbo + Motor điện</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>843
+                                        mã lực / 1.470 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>2.9
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>AMG
+                                        SPEEDSHIFT MCT 9G</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">12.500.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">12.500.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">13.200.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="1"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="1"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=1" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="1"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 2 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="2" data-category="electric" data-brand="Porsche" data-price="8500000000" data-name="Porsche Taycan Turbo S Cross Turismo">
+                <div class="col-lg-4 col-md-6 car-item" data-id="2" data-category="electric" data-brand="Porsche"
+                    data-price="8500000000" data-name="Porsche Taycan Turbo S Cross Turismo">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-2.jpg" alt="Porsche Taycan Turbo S" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Xe Điện Flagship</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Xe Điện
+                                Flagship</span>
                             <span class="car-category-tag text-uppercase">electric</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Porsche</div>
                             <h3 class="car-title">Porsche Taycan Turbo S Cross Turismo</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>Động cơ Điện kép Permanent Magnet</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>761 mã lực (Launch Control)</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>2.8 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Hộp số 2 cấp độc quyền</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>Động cơ
+                                        Điện kép Permanent Magnet</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>761
+                                        mã lực (Launch Control)</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>2.8
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Hộp số 2
+                                        cấp độc quyền</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">8.500.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">8.500.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">8.900.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="2"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="2"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=2" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="2"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 3 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="3" data-category="sport" data-brand="BMW" data-price="10990000000" data-name="BMW M8 Competition Gran Coupe">
+                <div class="col-lg-4 col-md-6 car-item" data-id="3" data-category="sport" data-brand="BMW"
+                    data-price="10990000000" data-name="BMW M8 Competition Gran Coupe">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-3.jpg" alt="BMW M8 Competition" class="car-thumb">
@@ -309,192 +341,267 @@
                             <div class="car-brand">BMW</div>
                             <h3 class="car-title">BMW M8 Competition Gran Coupe</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.4L V8 M TwinPower Turbo</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>625 mã lực / 750 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.2 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>8 Cấp M Steptronic Drivelogic</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.4L V8 M
+                                        TwinPower Turbo</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>625
+                                        mã lực / 750 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.2
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>8 Cấp M
+                                        Steptronic Drivelogic</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">10.990.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">10.990.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">11.500.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="3"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="3"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=3" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="3"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 4 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="4" data-category="electric" data-brand="Audi" data-price="7200000000" data-name="Audi RS e-tron GT Quattro">
+                <div class="col-lg-4 col-md-6 car-item" data-id="4" data-category="electric" data-brand="Audi"
+                    data-price="7200000000" data-name="Audi RS e-tron GT Quattro">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-4.jpg" alt="Audi RS e-tron GT" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Ưu đãi 100% trước bạ</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Ưu đãi 100% trước
+                                bạ</span>
                             <span class="car-category-tag text-uppercase">electric</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Audi</div>
                             <h3 class="car-title">Audi RS e-tron GT Quattro</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>Quattro Điện toàn thời gian</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>637 mã lực / 830 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.3 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Tự động 2 cấp</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>Quattro
+                                        Điện toàn thời gian</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>637
+                                        mã lực / 830 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.3
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Tự động 2
+                                        cấp</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">7.200.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">7.200.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">7.500.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="4"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="4"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=4" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="4"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 5 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="5" data-category="luxury" data-brand="Mercedes-Benz" data-price="16990000000" data-name="Mercedes-Maybach S 680 4MATIC">
+                <div class="col-lg-4 col-md-6 car-item" data-id="5" data-category="luxury" data-brand="Mercedes-Benz"
+                    data-price="16990000000" data-name="Mercedes-Maybach S 680 4MATIC">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-5.jpg" alt="Mercedes-Maybach S 680" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Chủ tịch Tinh hoa</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Chủ tịch Tinh
+                                hoa</span>
                             <span class="car-category-tag text-uppercase">luxury</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Mercedes-Benz</div>
                             <h3 class="car-title">Mercedes-Maybach S 680 4MATIC</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>6.0L V12 BiTurbo Handcrafted</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>612 mã lực / 900 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>4.5 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>9G-TRONIC 9 Cấp mượt mà</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>6.0L V12
+                                        BiTurbo Handcrafted</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>612
+                                        mã lực / 900 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>4.5
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>9G-TRONIC
+                                        9 Cấp mượt mà</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">16.990.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">16.990.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">17.500.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="5"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="5"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=5" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="5"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 6 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="6" data-category="electric" data-brand="VinFast" data-price="2299000000" data-name="VinFast VF 9 Plus (Bản 6 Chỗ)">
+                <div class="col-lg-4 col-md-6 car-item" data-id="6" data-category="electric" data-brand="VinFast"
+                    data-price="2299000000" data-name="VinFast VF 9 Plus (Bản 6 Chỗ)">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-6.jpg" alt="VinFast VF 9" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Tự Hào Việt Nam</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Tự Hào Việt
+                                Nam</span>
                             <span class="car-category-tag text-uppercase">electric</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">VinFast</div>
                             <h3 class="car-title">VinFast VF 9 Plus (Bản 6 Chỗ Ghế Cơ Trưởng)</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>2 Motor Điện Độc lập AWD</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>402 mã lực / 620 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>6.5 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Chuyển động trực tiếp 1 cấp</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>2 Motor
+                                        Điện Độc lập AWD</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>402
+                                        mã lực / 620 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>6.5
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Chuyển
+                                        động trực tiếp 1 cấp</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">2.299.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">2.299.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">2.450.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="6"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="6"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=6" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="6"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 7 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="7" data-category="sport" data-brand="Porsche" data-price="19800000000" data-name="Porsche 911 GT3 RS (992)">
+                <div class="col-lg-4 col-md-6 car-item" data-id="7" data-category="sport" data-brand="Porsche"
+                    data-price="19800000000" data-name="Porsche 911 GT3 RS (992)">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-7.jpg" alt="Porsche 911 GT3 RS" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Vua đường đua</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Vua đường
+                                đua</span>
                             <span class="car-category-tag text-uppercase">sport</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Porsche</div>
                             <h3 class="car-title">Porsche 911 GT3 RS (Thế hệ 992)</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.0L Hút khí tự nhiên 6 xi-lanh</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>525 mã lực / 465 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.2 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>PDK 7 Cấp siêu tốc</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.0L Hút
+                                        khí tự nhiên 6 xi-lanh</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>525
+                                        mã lực / 465 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>3.2
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>PDK 7 Cấp
+                                        siêu tốc</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">19.800.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">19.800.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">20.500.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="7"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="7"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=7" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="7"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 8 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="8" data-category="suv" data-brand="Lexus" data-price="9990000000" data-name="Lexus LX 600 VIP (Bản 4 Chỗ)">
+                <div class="col-lg-4 col-md-6 car-item" data-id="8" data-category="suv" data-brand="Lexus"
+                    data-price="9990000000" data-name="Lexus LX 600 VIP (Bản 4 Chỗ)">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-8.jpg" alt="Lexus LX 600 VIP" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> VIP Chuyên Cơ</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> VIP Chuyên
+                                Cơ</span>
                             <span class="car-category-tag text-uppercase">suv</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Lexus</div>
                             <h3 class="car-title">Lexus LX 600 VIP (Bản 4 Chỗ Độc Bản)</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>3.5L V6 Twin-Turbo Dual VVT-i</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>409 mã lực / 650 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>6.9 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>10 Cấp Direct Shift</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>3.5L V6
+                                        Twin-Turbo Dual VVT-i</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>409
+                                        mã lực / 650 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>6.9
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>10 Cấp
+                                        Direct Shift</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">9.990.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">9.990.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">10.500.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="8"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="8"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=8" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="8"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 9 -->
-                <div class="col-lg-4 col-md-6 car-item" data-id="9" data-category="luxury" data-brand="Land Rover" data-price="14800000000" data-name="Range Rover SV LWB P530">
+                <div class="col-lg-4 col-md-6 car-item" data-id="9" data-category="luxury" data-brand="Land Rover"
+                    data-price="14800000000" data-name="Range Rover SV LWB P530">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
                             <img src="./images/car-9.jpg" alt="Range Rover SV LWB" class="car-thumb">
-                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Đỉnh cao SUV</span>
+                            <span class="car-badge"><i class="fa-solid fa-fire text-warning me-1"></i> Đỉnh cao
+                                SUV</span>
                             <span class="car-category-tag text-uppercase">luxury</span>
                         </div>
                         <div class="car-body">
                             <div class="car-brand">Land Rover</div>
                             <h3 class="car-title">Range Rover SV LWB P530</h3>
                             <div class="car-specs-grid">
-                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.4L V8 Twin-Turbocharged</span></div>
-                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>530 mã lực / 750 Nm</span></div>
-                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>4.6 giây (0-100 km/h)</span></div>
-                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Tự động 8 cấp ZF</span></div>
+                                <div class="spec-cell" title="Động cơ"><i class="fa-solid fa-gears"></i><span>4.4L V8
+                                        Twin-Turbocharged</span></div>
+                                <div class="spec-cell" title="Công suất"><i class="fa-solid fa-horse-head"></i><span>530
+                                        mã lực / 750 Nm</span></div>
+                                <div class="spec-cell" title="Tăng tốc"><i class="fa-solid fa-stopwatch"></i><span>4.6
+                                        giây (0-100 km/h)</span></div>
+                                <div class="spec-cell" title="Hộp số"><i class="fa-solid fa-sliders"></i><span>Tự động 8
+                                        cấp ZF</span></div>
                             </div>
                             <div class="car-price-row">
-                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span><div class="car-price">14.800.000.000 ₫</div></div>
+                                <div><span class="text-secondary small d-block fw-bold">Giá niêm yết:</span>
+                                    <div class="car-price">14.800.000.000 ₫</div>
+                                </div>
                                 <div class="car-price-old">15.200.000.000 ₫</div>
                             </div>
                             <div class="d-flex gap-2 mt-2">
-                                <button type="button" class="btn btn-outline-gold btn-sm w-50 text-center btn-view-detail" data-id="9"><i class="fa-solid fa-circle-info me-1"></i> Chi tiết</button>
-                                <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book" data-car-id="9"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
+                                <a href="detail.html?id=9" class="btn btn-outline-gold btn-sm w-50 text-center"><i
+                                        class="fa-solid fa-circle-info me-1"></i> Chi tiết</a>
+                                <a href="#booking"
+                                    class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
+                                    data-car-id="9"><i class="fa-solid fa-key me-1"></i> Lái thử</a>
                             </div>
                         </div>
                     </div>
@@ -513,13 +620,15 @@
                         <span id="modalCarBrand" class="text-warning text-uppercase fw-bold small">BRAND</span>
                         <h4 class="modal-title text-white fw-bold" id="modalCarTitle">Tên Mẫu Xe</h4>
                     </div>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="rounded-3 overflow-hidden shadow-lg border border-warning border-opacity-50">
-                                <img src="" id="modalCarImg" alt="Car Detail" class="w-100" style="height: 260px; object-fit: cover;">
+                                <img src="" id="modalCarImg" alt="Car Detail" class="w-100"
+                                    style="height: 260px; object-fit: cover;">
                             </div>
                             <div class="mt-3 p-3 rounded-3 bg-dark border border-warning border-opacity-25">
                                 <div class="text-white-50 small mb-1 fw-bold">Giá bán công bố chính thức:</div>
@@ -534,26 +643,38 @@
                                 <i class="fa-solid fa-microchip text-warning me-2"></i> Bảng Thông Số Kỹ Thuật
                             </h6>
                             <ul class="list-unstyled small text-white mb-4">
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Động cơ:</span> <strong class="text-white" id="modalCarEngine"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Động cơ:</span> <strong class="text-white"
+                                        id="modalCarEngine"></strong>
                                 </li>
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Công suất:</span> <strong class="text-warning" id="modalCarPower"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Công suất:</span> <strong class="text-warning"
+                                        id="modalCarPower"></strong>
                                 </li>
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Tăng tốc:</span> <strong class="text-info" id="modalCarAccel"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Tăng tốc:</span> <strong class="text-info"
+                                        id="modalCarAccel"></strong>
                                 </li>
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Hộp số:</span> <strong class="text-white" id="modalCarTrans"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Hộp số:</span> <strong class="text-white"
+                                        id="modalCarTrans"></strong>
                                 </li>
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Tốc độ tối đa:</span> <strong class="text-white" id="modalCarSpeed"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Tốc độ tối đa:</span> <strong class="text-white"
+                                        id="modalCarSpeed"></strong>
                                 </li>
-                                <li class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
-                                    <span class="text-white-50">Nhiên liệu / Pin:</span> <strong class="text-white" id="modalCarRange"></strong>
+                                <li
+                                    class="d-flex justify-content-between py-2 border-bottom border-secondary border-opacity-50">
+                                    <span class="text-white-50">Nhiên liệu / Pin:</span> <strong class="text-white"
+                                        id="modalCarRange"></strong>
                                 </li>
                             </ul>
-                            
+
                             <h6 class="text-white fw-bold mb-2">Mô tả đặc quyền:</h6>
                             <p class="text-white-50 small mb-0" id="modalCarDesc"></p>
                         </div>
@@ -577,7 +698,8 @@
                     <i class="fa-solid fa-medal me-1"></i> DỊCH VỤ KHÁCH HÀNG THƯỢNG LƯU
                 </span>
                 <h2 class="display-6 fw-bold mt-2">Đặc Quyền Dành Riêng Cho Chủ Sở Hữu</h2>
-                <p class="section-desc mx-auto">Cam kết mang lại trải nghiệm mua sắm và sở hữu hoàn hảo theo tiêu chuẩn 5 sao toàn cầu.</p>
+                <p class="section-desc mx-auto">Cam kết mang lại trải nghiệm mua sắm và sở hữu hoàn hảo theo tiêu chuẩn
+                    5 sao toàn cầu.</p>
             </div>
 
             <div class="row g-4">
@@ -585,28 +707,32 @@
                     <div class="feature-box">
                         <div class="feature-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
                         <h4 class="text-dark fw-bold fs-5 mb-2">Kiểm Định 160 Hạng Mục</h4>
-                        <p class="text-secondary small mb-0">Từng cỗ máy đều trải qua quy trình soi chiếu gầm, khung vỏ, động cơ bằng máy quét quang học chuyên dụng.</p>
+                        <p class="text-secondary small mb-0">Từng cỗ máy đều trải qua quy trình soi chiếu gầm, khung vỏ,
+                            động cơ bằng máy quét quang học chuyên dụng.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-box">
                         <div class="feature-icon-wrap"><i class="fa-solid fa-percent"></i></div>
                         <h4 class="text-dark fw-bold fs-5 mb-2">Trả Góp Ưu Đãi 85%</h4>
-                        <p class="text-secondary small mb-0">Hợp tác cùng 12 ngân hàng lớn nhất Việt Nam. Lãi suất ưu đãi cố định từ 7.5%/năm, xét duyệt chỉ trong 2 giờ.</p>
+                        <p class="text-secondary small mb-0">Hợp tác cùng 12 ngân hàng lớn nhất Việt Nam. Lãi suất ưu
+                            đãi cố định từ 7.5%/năm, xét duyệt chỉ trong 2 giờ.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-box">
                         <div class="feature-icon-wrap"><i class="fa-solid fa-truck-ramp-box"></i></div>
                         <h4 class="text-dark fw-bold fs-5 mb-2">Giao Xe Tận Nhà 24/7</h4>
-                        <p class="text-secondary small mb-0">Dịch vụ xe lồng chuyên dụng bàn giao xe kín đáo, trang trọng tận cửa nhà quý khách trên toàn bộ 63 tỉnh thành.</p>
+                        <p class="text-secondary small mb-0">Dịch vụ xe lồng chuyên dụng bàn giao xe kín đáo, trang
+                            trọng tận cửa nhà quý khách trên toàn bộ 63 tỉnh thành.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-box">
                         <div class="feature-icon-wrap"><i class="fa-solid fa-wrench"></i></div>
                         <h4 class="text-dark fw-bold fs-5 mb-2">Bảo Hành 5 Năm VIP</h4>
-                        <p class="text-secondary small mb-0">Tặng gói chăm sóc phủ Ceramic 9H cao cấp, bảo hiểm thân vỏ và chế độ cứu hộ giao thông khẩn cấp 24/7 trên cả nước.</p>
+                        <p class="text-secondary small mb-0">Tặng gói chăm sóc phủ Ceramic 9H cao cấp, bảo hiểm thân vỏ
+                            và chế độ cứu hộ giao thông khẩn cấp 24/7 trên cả nước.</p>
                     </div>
                 </div>
             </div>
@@ -618,13 +744,21 @@
         <div class="container py-4">
             <div class="row align-items-center g-5">
                 <div class="col-lg-5">
-                    <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-calculator me-1"></i> CÔNG CỤ DỰ TOÁN TÀI CHÍNH</span>
+                    <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-calculator me-1"></i>
+                        CÔNG CỤ DỰ TOÁN TÀI CHÍNH</span>
                     <h2 class="text-dark fw-bold mt-2 mb-3">Tính Phí Trả Góp Xe Thông Minh</h2>
-                    <p class="text-secondary mb-4">Tự do lựa chọn phương án tài chính tối ưu cho doanh nghiệp và gia đình bạn. Bảng tính dựa trên phương thức dư nợ giảm dần chuẩn mực ngân hàng.</p>
+                    <p class="text-secondary mb-4">Tự do lựa chọn phương án tài chính tối ưu cho doanh nghiệp và gia
+                        đình bạn. Bảng tính dựa trên phương thức dư nợ giảm dần chuẩn mực ngân hàng.</p>
                     <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-center gap-3"><i class="fa-solid fa-circle-check text-warning fa-lg"></i><span class="text-dark fw-bold">Không cần chứng minh tài chính rườm rà</span></div>
-                        <div class="d-flex align-items-center gap-3"><i class="fa-solid fa-circle-check text-warning fa-lg"></i><span class="text-dark fw-bold">Hỗ trợ trả nợ trước hạn linh hoạt</span></div>
-                        <div class="d-flex align-items-center gap-3"><i class="fa-solid fa-circle-check text-warning fa-lg"></i><span class="text-dark fw-bold">Nhận xe ngay chỉ từ 20% giá trị hợp đồng</span></div>
+                        <div class="d-flex align-items-center gap-3"><i
+                                class="fa-solid fa-circle-check text-warning fa-lg"></i><span
+                                class="text-dark fw-bold">Không cần chứng minh tài chính rườm rà</span></div>
+                        <div class="d-flex align-items-center gap-3"><i
+                                class="fa-solid fa-circle-check text-warning fa-lg"></i><span
+                                class="text-dark fw-bold">Hỗ trợ trả nợ trước hạn linh hoạt</span></div>
+                        <div class="d-flex align-items-center gap-3"><i
+                                class="fa-solid fa-circle-check text-warning fa-lg"></i><span
+                                class="text-dark fw-bold">Nhận xe ngay chỉ từ 20% giá trị hợp đồng</span></div>
                     </div>
                 </div>
 
@@ -650,8 +784,11 @@
                                     <label class="form-label text-dark small fw-bold mb-0">Tỷ Lệ Trả Trước:</label>
                                     <span id="calcDownPaymentText" class="text-warning fw-bold fs-6">20%</span>
                                 </div>
-                                <input type="range" class="form-range" id="calcDownPaymentRange" min="10" max="70" step="5" value="20">
-                                <div class="d-flex justify-content-between text-muted small fw-bold"><span>10%</span><span>40%</span><span>70%</span></div>
+                                <input type="range" class="form-range" id="calcDownPaymentRange" min="10" max="70"
+                                    step="5" value="20">
+                                <div class="d-flex justify-content-between text-muted small fw-bold">
+                                    <span>10%</span><span>40%</span><span>70%</span>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label text-dark small fw-bold">Thời Gian Vay:</label>
@@ -667,16 +804,21 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label text-dark small fw-bold">Lãi Suất Ưu Đãi (%/Năm):</label>
-                                <input type="number" id="calcInterestRate" class="form-control filter-input" value="8.5" step="0.1" min="1" max="20">
+                                <input type="number" id="calcInterestRate" class="form-control filter-input" value="8.5"
+                                    step="0.1" min="1" max="20">
                             </div>
                             <div class="col-12">
                                 <div class="calc-result-box">
                                     <div class="calc-label-top">Ước Tính Gốc + Lãi Trả Hàng Tháng:</div>
                                     <div id="outMonthlyPay" class="calc-result-amount my-2">0 ₫</div>
                                     <div class="row pt-3 mt-2 border-top border-white border-opacity-25 small">
-                                        <div class="col-4"><span class="calc-sub-label">Số tiền trả trước:</span><strong class="d-block calc-sub-val fs-6" id="outDownPayment">0 ₫</strong></div>
-                                        <div class="col-4"><span class="calc-sub-label">Số tiền vay:</span><strong class="d-block calc-sub-val fs-6" id="outLoanAmount">0 ₫</strong></div>
-                                        <div class="col-4"><span class="calc-sub-label">Tổng lãi ước tính:</span><strong class="d-block calc-sub-val fs-6" id="outTotalInterest">0 ₫</strong></div>
+                                        <div class="col-4"><span class="calc-sub-label">Số tiền trả trước:</span><strong
+                                                class="d-block calc-sub-val fs-6" id="outDownPayment">0 ₫</strong></div>
+                                        <div class="col-4"><span class="calc-sub-label">Số tiền vay:</span><strong
+                                                class="d-block calc-sub-val fs-6" id="outLoanAmount">0 ₫</strong></div>
+                                        <div class="col-4"><span class="calc-sub-label">Tổng lãi ước tính:</span><strong
+                                                class="d-block calc-sub-val fs-6" id="outTotalInterest">0 ₫</strong>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -698,30 +840,38 @@
                                 <i class="fa-solid fa-id-card-clip me-1"></i> Trải Nghiệm Thực Tế Miễn Phí
                             </span>
                             <h2 class="display-6 fw-bold mt-2">Đăng Ký Lái Thử & Nhận Báo Giá</h2>
-                            <p class="section-desc mx-auto fs-6" style="max-width: 620px;">Trải nghiệm thực tế cảm giác sau vô lăng của những cỗ máy hàng đầu thế giới ngay hôm nay.</p>
+                            <p class="section-desc mx-auto fs-6" style="max-width: 620px;">Trải nghiệm thực tế cảm giác
+                                sau vô lăng của những cỗ máy hàng đầu thế giới ngay hôm nay.</p>
                         </div>
 
                         <form id="bookingForm">
                             <div class="row g-4">
                                 <div class="col-md-6">
-                                    <label class="form-label">Họ và Tên Quý Khách <span class="text-danger">*</span></label>
+                                    <label class="form-label">Họ và Tên Quý Khách <span
+                                            class="text-danger">*</span></label>
                                     <div class="input-group">
-                                        <span class="input-group-text input-group-text-bright"><i class="fa-solid fa-user"></i></span>
-                                        <input type="text" id="bFullName" class="form-control input-bright" placeholder="Ví dụ: Nguyễn Văn An" required>
+                                        <span class="input-group-text input-group-text-bright"><i
+                                                class="fa-solid fa-user"></i></span>
+                                        <input type="text" id="bFullName" class="form-control input-bright"
+                                            placeholder="Ví dụ: Nguyễn Văn An" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Số Điện Thoại <span class="text-danger">*</span></label>
                                     <div class="input-group">
-                                        <span class="input-group-text input-group-text-bright"><i class="fa-solid fa-phone"></i></span>
-                                        <input type="tel" id="bPhone" class="form-control input-bright" placeholder="Ví dụ: 0905 123 456" required>
+                                        <span class="input-group-text input-group-text-bright"><i
+                                                class="fa-solid fa-phone"></i></span>
+                                        <input type="tel" id="bPhone" class="form-control input-bright"
+                                            placeholder="Ví dụ: 0905 123 456" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Email Nhận Báo Giá</label>
                                     <div class="input-group">
-                                        <span class="input-group-text input-group-text-bright"><i class="fa-solid fa-envelope"></i></span>
-                                        <input type="email" id="bEmail" class="form-control input-bright" placeholder="an.nguyen@company.com">
+                                        <span class="input-group-text input-group-text-bright"><i
+                                                class="fa-solid fa-envelope"></i></span>
+                                        <input type="email" id="bEmail" class="form-control input-bright"
+                                            placeholder="an.nguyen@company.com">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -747,7 +897,8 @@
                                     <label class="form-label">Khung Giờ Thuận Tiện</label>
                                     <select id="bTime" class="form-select input-bright">
                                         <option value="Buổi Sáng (08:30 - 11:30)">Buổi Sáng (08:30 - 11:30)</option>
-                                        <option value="Buổi Chiều (14:00 - 17:30)" selected>Buổi Chiều (14:00 - 17:30)</option>
+                                        <option value="Buổi Chiều (14:00 - 17:30)" selected>Buổi Chiều (14:00 - 17:30)
+                                        </option>
                                         <option value="Buổi Tối (18:00 - 20:30)">Buổi Tối (18:00 - 20:30)</option>
                                     </select>
                                 </div>
@@ -760,14 +911,16 @@
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label">Ghi Chú Hoặc Yêu Cầu Riêng</label>
-                                    <textarea id="bNotes" rows="3" class="form-control input-bright" placeholder="Ví dụ: Cần chuẩn bị xe màu trắng, tư vấn thêm gói bảo hiểm..."></textarea>
+                                    <textarea id="bNotes" rows="3" class="form-control input-bright"
+                                        placeholder="Ví dụ: Cần chuẩn bị xe màu trắng, tư vấn thêm gói bảo hiểm..."></textarea>
                                 </div>
                                 <div class="col-12 text-center pt-3">
                                     <button type="submit" class="btn-gold px-5 py-3 fs-6">
                                         <i class="fa-solid fa-paper-plane me-2"></i> Gửi Yêu Cầu Lái Thử Ngay
                                     </button>
                                     <div class="text-muted small mt-2">
-                                        <i class="fa-solid fa-lock text-success me-1"></i> Thông tin được bảo mật tuyệt đối 100%.
+                                        <i class="fa-solid fa-lock text-success me-1"></i> Thông tin được bảo mật tuyệt
+                                        đối 100%.
                                     </div>
                                 </div>
                             </div>
@@ -782,37 +935,60 @@
     <section class="py-5" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-comments me-1"></i> ĐÁNH GIÁ TỪ CHỦ XE</span>
+                <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-comments me-1"></i> ĐÁNH
+                    GIÁ TỪ CHỦ XE</span>
                 <h2 class="text-dark fw-bold mt-2">Khách Hàng Nói Về AutoLux</h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
-                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="text-secondary small mb-4">"Tôi nhận chiếc Porsche Taycan Turbo S chỉ sau 3 ngày hoàn tất hợp đồng. Dịch vụ xe lồng giao tận biệt thự ở Flamingo rất chuyên nghiệp và trang trọng."</p>
+                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-secondary small mb-4">"Tôi nhận chiếc Porsche Taycan Turbo S chỉ sau 3 ngày hoàn
+                            tất hợp đồng. Dịch vụ xe lồng giao tận biệt thự ở Flamingo rất chuyên nghiệp và trang
+                            trọng."</p>
                         <div class="d-flex align-items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Khách hàng" class="user-avatar">
-                            <div><h6 class="text-dark fw-bold mb-0">Ông Hoàng Nam</h6><span class="text-secondary small">Tổng giám đốc Nam Phát Group</span></div>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                                alt="Khách hàng" class="user-avatar">
+                            <div>
+                                <h6 class="text-dark fw-bold mb-0">Ông Hoàng Nam</h6><span
+                                    class="text-secondary small">Tổng giám đốc Nam Phát Group</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
-                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="text-secondary small mb-4">"Gói hỗ trợ tài chính ở AutoLux xử lý siêu tốc. Hồ sơ duyệt chưa đầy 2 tiếng, lãi suất cố định thấp hơn mặt bằng chung. Rất hài lòng!"</p>
+                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-secondary small mb-4">"Gói hỗ trợ tài chính ở AutoLux xử lý siêu tốc. Hồ sơ duyệt
+                            chưa đầy 2 tiếng, lãi suất cố định thấp hơn mặt bằng chung. Rất hài lòng!"</p>
                         <div class="d-flex align-items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Khách hàng" class="user-avatar">
-                            <div><h6 class="text-dark fw-bold mb-0">Bà Lê Thúy Hằng</h6><span class="text-secondary small">Chủ sở hữu Maybach S680</span></div>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                                alt="Khách hàng" class="user-avatar">
+                            <div>
+                                <h6 class="text-dark fw-bold mb-0">Bà Lê Thúy Hằng</h6><span
+                                    class="text-secondary small">Chủ sở hữu Maybach S680</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
-                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="text-secondary small mb-4">"Showroom trưng bày xe đẳng cấp quốc tế. Nhân viên am hiểu kỹ thuật và tư vấn rất có tâm. Sẽ luôn ủng hộ AutoLux!"</p>
+                        <div class="d-flex text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-secondary small mb-4">"Showroom trưng bày xe đẳng cấp quốc tế. Nhân viên am hiểu
+                            kỹ thuật và tư vấn rất có tâm. Sẽ luôn ủng hộ AutoLux!"</p>
                         <div class="d-flex align-items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Khách hàng" class="user-avatar">
-                            <div><h6 class="text-dark fw-bold mb-0">Ông Trần Đình Trọng</h6><span class="text-secondary small">Kiến trúc sư - Sở hữu M8 Competition</span></div>
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                                alt="Khách hàng" class="user-avatar">
+                            <div>
+                                <h6 class="text-dark fw-bold mb-0">Ông Trần Đình Trọng</h6><span
+                                    class="text-secondary small">Kiến trúc sư - Sở hữu M8 Competition</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -825,21 +1001,34 @@
         <div class="container py-4">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-headset me-1"></i> TẬN TÂM PHỤC VỤ</span>
+                    <span class="text-warning text-uppercase fw-bold small"><i class="fa-solid fa-headset me-1"></i> TẬN
+                        TÂM PHỤC VỤ</span>
                     <h2 class="text-dark fw-bold mt-2 mb-3">Hệ Thống Showroom & Trung Tâm Dịch Vụ</h2>
-                    <p class="text-secondary mb-4">Quý khách có thể ghé thăm trực tiếp các chi nhánh đại lý chính thức trên toàn quốc.</p>
+                    <p class="text-secondary mb-4">Quý khách có thể ghé thăm trực tiếp các chi nhánh đại lý chính thức
+                        trên toàn quốc.</p>
                     <div class="d-flex flex-column gap-3 mb-4">
                         <div class="d-flex gap-3">
                             <div class="text-warning fs-4"><i class="fa-solid fa-building"></i></div>
-                            <div><h6 class="fw-bold text-dark mb-1">Showroom Miền Bắc - Hà Nội</h6><p class="text-secondary small mb-0">Tòa tháp Keangnam Landmark 72, Phạm Hùng, Nam Từ Liêm, Hà Nội</p></div>
+                            <div>
+                                <h6 class="fw-bold text-dark mb-1">Showroom Miền Bắc - Hà Nội</h6>
+                                <p class="text-secondary small mb-0">Tòa tháp Keangnam Landmark 72, Phạm Hùng, Nam Từ
+                                    Liêm, Hà Nội</p>
+                            </div>
                         </div>
                         <div class="d-flex gap-3">
                             <div class="text-warning fs-4"><i class="fa-solid fa-building"></i></div>
-                            <div><h6 class="fw-bold text-dark mb-1">Showroom Miền Trung - Đà Nẵng</h6><p class="text-secondary small mb-0">186 Nguyễn Văn Linh, Quận Hải Châu, TP. Đà Nẵng</p></div>
+                            <div>
+                                <h6 class="fw-bold text-dark mb-1">Showroom Miền Trung - Đà Nẵng</h6>
+                                <p class="text-secondary small mb-0">186 Nguyễn Văn Linh, Quận Hải Châu, TP. Đà Nẵng</p>
+                            </div>
                         </div>
                         <div class="d-flex gap-3">
                             <div class="text-warning fs-4"><i class="fa-solid fa-building"></i></div>
-                            <div><h6 class="fw-bold text-dark mb-1">Showroom Miền Nam - TP. Hồ Chí Minh</h6><p class="text-secondary small mb-0">Khu Đô Thị Sala, Số 10 Mai Chí Thọ, TP. Thủ Đức, TP. HCM</p></div>
+                            <div>
+                                <h6 class="fw-bold text-dark mb-1">Showroom Miền Nam - TP. Hồ Chí Minh</h6>
+                                <p class="text-secondary small mb-0">Khu Đô Thị Sala, Số 10 Mai Chí Thọ, TP. Thủ Đức,
+                                    TP. HCM</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -847,28 +1036,34 @@
                 <div class="col-lg-6">
                     <div class="contact-card-bright">
                         <h4 class="mb-2">Gửi Lời Nhắn Đến Ban Quản Trị</h4>
-                        <p class="small mb-4">Quý khách có nhu cầu đặt hàng cấu hình cá nhân hóa riêng, xin để lại lời nhắn:</p>
+                        <p class="small mb-4">Quý khách có nhu cầu đặt hàng cấu hình cá nhân hóa riêng, xin để lại lời
+                            nhắn:</p>
                         <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">Họ và tên *</label>
-                                    <input type="text" id="cFullName" class="form-control input-bright" placeholder="Ví dụ: Trần Văn Nam" required>
+                                    <input type="text" id="cFullName" class="form-control input-bright"
+                                        placeholder="Ví dụ: Trần Văn Nam" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">Số điện thoại *</label>
-                                    <input type="tel" id="cPhone" class="form-control input-bright" placeholder="0908 123 456" required>
+                                    <input type="tel" id="cPhone" class="form-control input-bright"
+                                        placeholder="0908 123 456" required>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Email liên hệ</label>
-                                    <input type="email" id="cEmail" class="form-control input-bright" placeholder="nam.tran@company.com">
+                                    <input type="email" id="cEmail" class="form-control input-bright"
+                                        placeholder="nam.tran@company.com">
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Tiêu đề yêu cầu</label>
-                                    <input type="text" id="cSubject" class="form-control input-bright" placeholder="VD: Tư vấn xe độc bản, Gói vay...">
+                                    <input type="text" id="cSubject" class="form-control input-bright"
+                                        placeholder="VD: Tư vấn xe độc bản, Gói vay...">
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Nội dung trao đổi</label>
-                                    <textarea id="cMessage" rows="3" class="form-control input-bright" placeholder="Chi tiết yêu cầu..."></textarea>
+                                    <textarea id="cMessage" rows="3" class="form-control input-bright"
+                                        placeholder="Chi tiết yêu cầu..."></textarea>
                                 </div>
                                 <div class="col-12 pt-2">
                                     <button type="submit" class="btn-gold w-100 justify-content-center py-3">
@@ -892,7 +1087,8 @@
                         <div class="brand-icon"><i class="fa-solid fa-shield-cat"></i></div>
                         <div class="text-white">AUTOLUX <span class="highlight">MOTORS</span></div>
                     </div>
-                    <p class="text-white-50 small mb-4">AutoLux Motors - Đơn vị tiên phong phân phối và cá nhân hóa xe thể thao, xe siêu sang và xe điện thông minh tại thị trường Việt Nam.</p>
+                    <p class="text-white-50 small mb-4">AutoLux Motors - Đơn vị tiên phong phân phối và cá nhân hóa xe
+                        thể thao, xe siêu sang và xe điện thông minh tại thị trường Việt Nam.</p>
                 </div>
                 <div class="col-lg-2 col-6">
                     <h6 class="text-white fw-bold mb-3">Thương Hiệu</h6>
@@ -918,11 +1114,13 @@
                     </div>
                 </div>
             </div>
-            <div class="pt-4 border-top border-white border-opacity-10 d-flex flex-wrap justify-content-between align-items-center text-white-50 small">
+            <div
+                class="pt-4 border-top border-white border-opacity-10 d-flex flex-wrap justify-content-between align-items-center text-white-50 small">
                 <div>© 2026 AUTOLUX MOTORS VIETNAM. Tất cả các quyền được bảo lưu.</div>
                 <div class="d-flex gap-4 align-items-center">
                     <a href="#top" class="text-white-50 text-decoration-none">Lên đầu trang</a>
-                    <a href="javascript:void(0)" class="text-warning text-decoration-none small fw-bold" onclick="openAdminLogin()" title="Nhấp để đăng nhập Cổng Quản Trị">
+                    <a href="login.html" class="text-warning text-decoration-none small fw-bold"
+                        title="Đăng nhập Cổng Quản Trị Nhân Viên">
                         <i class="fa-solid fa-lock me-1"></i> Cổng nội bộ (Admin)
                     </a>
                 </div>
@@ -936,7 +1134,8 @@
             <div class="modal-content shadow-lg border-0 rounded-4">
                 <div class="modal-header border-0 bg-dark text-white p-4 rounded-top-4">
                     <div class="d-flex align-items-center gap-3">
-                        <div style="background:#e0aa3e; color:#111; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+                        <div
+                            style="background:#e0aa3e; color:#111; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
                         <div>
@@ -944,32 +1143,39 @@
                             <small class="text-warning">Khu vực dành riêng cho chuyên viên & quản trị showroom</small>
                         </div>
                     </div>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4 bg-light">
                     <div class="alert alert-warning py-2 small mb-3 border-0 rounded-3">
-                        <i class="fa-solid fa-circle-info me-1"></i> <strong>Tài khoản nội bộ:</strong> User: <code>admin</code> | Pass: <code>admin123</code>
+                        <i class="fa-solid fa-circle-info me-1"></i> <strong>Tài khoản nội bộ:</strong> User:
+                        <code>admin</code> | Pass: <code>admin123</code>
                     </div>
                     <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
                         <div class="mb-3">
                             <label class="form-label fw-bold text-dark small">Tên đăng nhập</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="fa-solid fa-user text-muted"></i></span>
+                                <span class="input-group-text bg-white"><i
+                                        class="fa-solid fa-user text-muted"></i></span>
                                 <input type="text" id="adminUsername" class="form-control" value="admin" required>
                             </div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold text-dark small">Mật khẩu</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="fa-solid fa-key text-muted"></i></span>
-                                <input type="password" id="adminPassword" class="form-control" value="admin123" required>
+                                <span class="input-group-text bg-white"><i
+                                        class="fa-solid fa-key text-muted"></i></span>
+                                <input type="password" id="adminPassword" class="form-control" value="admin123"
+                                    required>
                             </div>
                         </div>
                         <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-warning flex-grow-1 fw-bold py-2 rounded-3 text-dark shadow-sm">
+                            <button type="submit"
+                                class="btn btn-warning flex-grow-1 fw-bold py-2 rounded-3 text-dark shadow-sm">
                                 <i class="fa-solid fa-right-to-bracket me-1"></i> Đăng Nhập Quản Trị
                             </button>
-                            <button type="button" class="btn btn-outline-secondary py-2 rounded-3" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-outline-secondary py-2 rounded-3"
+                                data-bs-dismiss="modal">Đóng</button>
                         </div>
                     </form>
                 </div>
@@ -983,19 +1189,25 @@
             <div class="modal-content border-0 shadow-lg rounded-4">
                 <div class="modal-header bg-dark text-white p-3 p-md-4 rounded-top-4 border-0">
                     <div class="d-flex align-items-center gap-3">
-                        <div style="background:#e0aa3e; color:#111; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+                        <div
+                            style="background:#e0aa3e; color:#111; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
                             <i class="fa-solid fa-gauge-high"></i>
                         </div>
                         <div>
-                            <h5 class="modal-title fw-bold text-white mb-0">AUTOLUX <span class="text-warning">BẢNG QUẢN TRỊ NỘI BỘ</span></h5>
-                            <small class="text-white-50"><i class="fa-solid fa-circle fa-2xs text-success me-1"></i> Quản Trị Viên: <strong class="text-warning">Dương Chí Phú</strong> (Đang trực ca)</small>
+                            <h5 class="modal-title fw-bold text-white mb-0">AUTOLUX <span class="text-warning">BẢNG QUẢN
+                                    TRỊ NỘI BỘ</span></h5>
+                            <small class="text-white-50"><i class="fa-solid fa-circle fa-2xs text-success me-1"></i>
+                                Quản Trị Viên: <strong class="text-warning">Dương Chí Phú</strong> (Đang trực
+                                ca)</small>
                         </div>
                     </div>
                     <div class="d-flex align-items-center gap-2">
-                        <button type="button" class="btn btn-outline-danger btn-sm rounded-pill px-3" onclick="adminLogout()">
+                        <button type="button" class="btn btn-outline-danger btn-sm rounded-pill px-3"
+                            onclick="adminLogout()">
                             <i class="fa-solid fa-power-off me-1"></i> Đăng Xuất
                         </button>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                 </div>
 
@@ -1009,7 +1221,8 @@
                                         <div class="text-muted small fw-bold text-uppercase">Xe Showroom</div>
                                         <div class="fs-4 fw-bold text-dark mt-1" id="kpiCarsCount">9</div>
                                     </div>
-                                    <div class="p-3 rounded-3 bg-warning bg-opacity-10 text-warning fs-4"><i class="fa-solid fa-car-side"></i></div>
+                                    <div class="p-3 rounded-3 bg-warning bg-opacity-10 text-warning fs-4"><i
+                                            class="fa-solid fa-car-side"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -1020,7 +1233,8 @@
                                         <div class="text-muted small fw-bold text-uppercase">Lịch Hẹn Lái Thử</div>
                                         <div class="fs-4 fw-bold text-primary mt-1" id="kpiBookingsCount">0</div>
                                     </div>
-                                    <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary fs-4"><i class="fa-solid fa-calendar-check"></i></div>
+                                    <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary fs-4"><i
+                                            class="fa-solid fa-calendar-check"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -1031,7 +1245,8 @@
                                         <div class="text-muted small fw-bold text-uppercase">Tin Nhắn Tư Vấn</div>
                                         <div class="fs-4 fw-bold text-success mt-1" id="kpiContactsCount">0</div>
                                     </div>
-                                    <div class="p-3 rounded-3 bg-success bg-opacity-10 text-success fs-4"><i class="fa-solid fa-envelope-open-text"></i></div>
+                                    <div class="p-3 rounded-3 bg-success bg-opacity-10 text-success fs-4"><i
+                                            class="fa-solid fa-envelope-open-text"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -1042,7 +1257,8 @@
                                         <div class="text-muted small fw-bold text-uppercase">Tổng Giá Trị Kho</div>
                                         <div class="fs-4 fw-bold text-dark mt-1">128.8 Tỷ</div>
                                     </div>
-                                    <div class="p-3 rounded-3 bg-dark bg-opacity-10 text-dark fs-4"><i class="fa-solid fa-vault"></i></div>
+                                    <div class="p-3 rounded-3 bg-dark bg-opacity-10 text-dark fs-4"><i
+                                            class="fa-solid fa-vault"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -1051,17 +1267,22 @@
                     <!-- Navigation Tabs -->
                     <ul class="nav nav-pills mb-3 bg-white p-2 rounded-3 shadow-sm" id="adminTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active fw-bold text-dark" id="tab-bookings-btn" data-bs-toggle="pill" data-bs-target="#tab-bookings" type="button" role="tab">
-                                <i class="fa-solid fa-calendar-check me-1 text-primary"></i> Đơn Đăng Ký Lái Thử <span class="badge bg-primary rounded-pill ms-1" id="badgeBookings">0</span>
+                            <button class="nav-link active fw-bold text-dark" id="tab-bookings-btn"
+                                data-bs-toggle="pill" data-bs-target="#tab-bookings" type="button" role="tab">
+                                <i class="fa-solid fa-calendar-check me-1 text-primary"></i> Đơn Đăng Ký Lái Thử <span
+                                    class="badge bg-primary rounded-pill ms-1" id="badgeBookings">0</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold text-dark" id="tab-contacts-btn" data-bs-toggle="pill" data-bs-target="#tab-contacts" type="button" role="tab">
-                                <i class="fa-solid fa-comments me-1 text-success"></i> Phản Hồi Tư Vấn <span class="badge bg-success rounded-pill ms-1" id="badgeContacts">0</span>
+                            <button class="nav-link fw-bold text-dark" id="tab-contacts-btn" data-bs-toggle="pill"
+                                data-bs-target="#tab-contacts" type="button" role="tab">
+                                <i class="fa-solid fa-comments me-1 text-success"></i> Phản Hồi Tư Vấn <span
+                                    class="badge bg-success rounded-pill ms-1" id="badgeContacts">0</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold text-dark" id="tab-cars-btn" data-bs-toggle="pill" data-bs-target="#tab-cars" type="button" role="tab">
+                            <button class="nav-link fw-bold text-dark" id="tab-cars-btn" data-bs-toggle="pill"
+                                data-bs-target="#tab-cars" type="button" role="tab">
                                 <i class="fa-solid fa-car me-1 text-warning"></i> Danh Mục 9 Siêu Xe
                             </button>
                         </li>
@@ -1072,9 +1293,13 @@
                         <!-- Tab 1: Bookings -->
                         <div class="tab-pane fade show active" id="tab-bookings" role="tabpanel">
                             <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
-                                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-                                    <h6 class="mb-0 fw-bold text-dark"><i class="fa-solid fa-list me-2 text-primary"></i> Danh Sách Lịch Hẹn Khách Hàng</h6>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="clearBookings()"><i class="fa-solid fa-trash me-1"></i> Xóa tất cả</button>
+                                <div
+                                    class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 fw-bold text-dark"><i
+                                            class="fa-solid fa-list me-2 text-primary"></i> Danh Sách Lịch Hẹn Khách
+                                        Hàng</h6>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="clearBookings()"><i
+                                            class="fa-solid fa-trash me-1"></i> Xóa tất cả</button>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover align-middle mb-0">
@@ -1101,9 +1326,13 @@
                         <!-- Tab 2: Contacts -->
                         <div class="tab-pane fade" id="tab-contacts" role="tabpanel">
                             <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
-                                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-                                    <h6 class="mb-0 fw-bold text-dark"><i class="fa-solid fa-envelope me-2 text-success"></i> Tin Nhắn Tư Vấn & Yêu Cầu Riêng</h6>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="clearContacts()"><i class="fa-solid fa-trash me-1"></i> Xóa tất cả</button>
+                                <div
+                                    class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 fw-bold text-dark"><i
+                                            class="fa-solid fa-envelope me-2 text-success"></i> Tin Nhắn Tư Vấn & Yêu
+                                        Cầu Riêng</h6>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="clearContacts()"><i
+                                            class="fa-solid fa-trash me-1"></i> Xóa tất cả</button>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover align-middle mb-0">
@@ -1130,7 +1359,9 @@
                         <div class="tab-pane fade" id="tab-cars" role="tabpanel">
                             <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
                                 <div class="card-header bg-white py-3">
-                                    <h6 class="mb-0 fw-bold text-dark"><i class="fa-solid fa-warehouse me-2 text-warning"></i> Quản Lý Kho 9 Xe Showroom Hiện Hữu</h6>
+                                    <h6 class="mb-0 fw-bold text-dark"><i
+                                            class="fa-solid fa-warehouse me-2 text-warning"></i> Quản Lý Kho 9 Xe
+                                        Showroom Hiện Hữu</h6>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover align-middle mb-0">
@@ -1363,7 +1594,7 @@
 
         // Category Pills Click
         document.querySelectorAll('#categoryPills .category-pill').forEach(pill => {
-            pill.addEventListener('click', function() {
+            pill.addEventListener('click', function () {
                 document.querySelectorAll('#categoryPills .category-pill').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentCategory = this.getAttribute('data-category');
@@ -1375,7 +1606,7 @@
         let carModalInstance = null;
         let selectedModalCarId = null;
         document.querySelectorAll('.btn-view-detail').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const id = this.getAttribute('data-id');
                 const car = CARS_DATA[id];
                 if (!car) return;
@@ -1400,7 +1631,7 @@
             });
         });
 
-        document.getElementById('modalBookTestDriveBtn').addEventListener('click', function() {
+        document.getElementById('modalBookTestDriveBtn').addEventListener('click', function () {
             if (carModalInstance) carModalInstance.hide();
             if (selectedModalCarId) {
                 document.getElementById('bookingCarSelect').value = selectedModalCarId;
@@ -1410,7 +1641,7 @@
 
         // 4. Quick Book Action
         document.querySelectorAll('.btn-quick-book').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 const id = this.getAttribute('data-car-id');
                 if (id) document.getElementById('bookingCarSelect').value = id;
             });
@@ -1498,7 +1729,7 @@
         }
 
         // Form Lái Thử Submit
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const name = document.getElementById('bFullName').value.trim();
             const phone = document.getElementById('bPhone').value.trim();
@@ -1526,7 +1757,7 @@
         });
 
         // Form Liên Hệ Submit
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const name = document.getElementById('cFullName').value.trim();
             const phone = document.getElementById('cPhone').value.trim();
@@ -1596,7 +1827,7 @@
                     <tr>
                         <td class="fw-bold text-muted">${idx + 1}</td>
                         <td class="fw-bold text-dark">${b.name}</td>
-                        <td><a href="tel:${b.phone.replace(/\\s/g,'')}" class="text-decoration-none text-primary fw-bold">${b.phone}</a></td>
+                        <td><a href="tel:${b.phone.replace(/\\s/g, '')}" class="text-decoration-none text-primary fw-bold">${b.phone}</a></td>
                         <td><span class="badge bg-dark bg-opacity-10 text-dark border">${b.car}</span></td>
                         <td><small class="text-muted"><i class="fa-regular fa-clock me-1"></i>${b.date}</small></td>
                         <td><small>${b.location}</small></td>
@@ -1703,7 +1934,7 @@
         }
 
         // Phím tắt Ctrl + Shift + A để mở nhanh Admin
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
                 e.preventDefault();
                 openAdminLogin();
@@ -1711,4 +1942,5 @@
         });
     </script>
 </body>
+
 </html>
