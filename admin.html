@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLux Admin | Quản Lý Lịch Hẹn & Phản Hồi Tư Vấn</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23d97706' d='M256 0c141.4 0 256 114.6 256 256S397.4 512 256 512 0 397.4 0 256 114.6 0 256 0z'/></svg>">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin-light-body">
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container-custom" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+    <!-- Navbar Quản Trị Sáng Sủa Chuyên Nghiệp -->
+    <nav class="navbar navbar-expand-lg admin-light-navbar sticky-top">
+        <div class="container-fluid px-4">
+            <a class="brand-logo text-decoration-none" href="admin.html">
+                <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="brand-text">AUTOLUX <span class="highlight">BẢNG QUẢN TRỊ</span></div>
+            </a>
+            
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <div class="d-none d-md-flex align-items-center gap-2 pe-3 border-end border-slate-300">
+                    <div class="staff-avatar" style="width:36px; height:36px; background:#e0aa3e; color:#111; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold;">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <span class="staff-name d-block fw-bold text-dark small">Dương Chí Phú (Admin)</span>
+                        <span class="staff-status small text-success"><i class="fa-solid fa-circle fa-2xs text-success me-1"></i> Đang trực ca</span>
+                    </div>
+                </div>
+
+                <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Xem Showroom
+                </a>
+
+                <button onclick="handleLogout()" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+                    <i class="fa-solid fa-power-off me-1"></i> Đăng Xuất
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid px-4 py-4">
+        <!-- Header Banner -->
+        <div class="admin-welcome-card mb-4 p-4 rounded-3 border bg-white shadow-sm">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div>
+                    <span class="badge bg-primary bg-opacity-10 text-primary fw-bold mb-2 px-3 py-1 rounded-pill">
+                        <i class="fa-solid fa-shield-check me-1"></i> CỔNG ĐIỀU HÀNH NỘI BỘ SHOWROOM
+                    </span>
+                    <h3 class="fw-bold text-dark mb-1">
+                        Hệ Thống Quản Lý Lịch Lái Thử & Tư Vấn Khách Hàng
+                    </h3>
+                    <p class="text-secondary mb-0 small">Theo dõi lịch hẹn, chuyển đổi trạng thái tiếp nhận và phản hồi giải đáp thắc mắc của khách hàng.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="#bookingsSection" class="btn btn-warning btn-sm px-3 shadow-sm fw-bold text-dark">
+                        <i class="fa-solid fa-calendar-check me-1"></i> Lịch Lái Thử
+                    </a>
+                    <a href="#contactsSection" class="btn btn-primary btn-sm px-3 shadow-sm fw-bold">
+                        <i class="fa-solid fa-comments me-1"></i> Trả Lời Tư Vấn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thống Kê 4 Chỉ Số Nhanh -->
+        <div class="row g-3 mb-4">
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card border bg-white p-3 rounded-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="stat-icon p-3 rounded-3 bg-primary bg-opacity-10 text-primary fs-3">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div>
+                        <span class="stat-label text-muted small d-block">Tổng Đơn Lái Thử</span>
+                        <h3 class="stat-value text-dark fw-bold mb-0" id="statTotalBookings">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card border bg-white p-3 rounded-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="stat-icon p-3 rounded-3 bg-warning bg-opacity-10 text-warning fs-3">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div>
+                        <span class="stat-label text-warning-emphasis small d-block">Chờ Xác Nhận</span>
+                        <h3 class="stat-value text-warning fw-bold mb-0" id="statPendingBookings">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card border bg-white p-3 rounded-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="stat-icon p-3 rounded-3 bg-success bg-opacity-10 text-success fs-3">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <span class="stat-label text-success-emphasis small d-block">Đã Xác Nhận</span>
+                        <h3 class="stat-value text-success fw-bold mb-0" id="statConfirmedBookings">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card border bg-white p-3 rounded-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="stat-icon p-3 rounded-3 bg-danger bg-opacity-10 text-danger fs-3">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <div>
+                        <span class="stat-label text-danger-emphasis small d-block">Khách Chờ Trả Lời</span>
+                        <h3 class="stat-value text-danger fw-bold mb-0" id="statPendingContacts">0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 1: QUẢN LÝ LỊCH LÁI THỬ -->
+        <div class="card p-4 mb-4 shadow-sm border rounded-3 bg-white" id="bookingsSection">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+                <div>
+                    <h4 class="fw-bold text-dark mb-1">
+                        <i class="fa-solid fa-list-check text-warning me-2"></i> Danh Sách Lịch Lái Thử & Chế Độ Xác Nhận
+                    </h4>
+                    <span class="text-secondary small">Quản lý duyệt đơn khách hàng: <strong>Chờ xác nhận &rarr; Đã duyệt &rarr; Đã hủy</strong></span>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-danger" onclick="resetBookings()"><i class="fa-solid fa-rotate-right me-1"></i> Nạp mẫu mặc định</button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light small text-uppercase">
+                        <tr>
+                            <th>Mã Đơn</th>
+                            <th>Khách Hàng</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Dòng Xe Đăng Ký</th>
+                            <th>Ngày & Giờ Lái Thử</th>
+                            <th>Địa Điểm</th>
+                            <th>Trạng Thái</th>
+                            <th class="text-end">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminBookingsTbody">
+                        <!-- Dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: QUẢN LÝ TIN NHẮN TƯ VẤN -->
+        <div class="card p-4 mb-4 shadow-sm border rounded-3 bg-white" id="contactsSection">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+                <div>
+                    <h4 class="fw-bold text-dark mb-1">
+                        <i class="fa-solid fa-comments text-primary me-2"></i> Phản Hồi Tư Vấn Từ Khách Hàng
+                    </h4>
+                    <span class="text-secondary small">Các yêu cầu cá nhân hóa, báo giá và trao đổi riêng.</span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light small text-uppercase">
+                        <tr>
+                            <th>#</th>
+                            <th>Khách Hàng</th>
+                            <th>Liên Hệ</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung Yêu Cầu</th>
+                            <th>Thời Gian</th>
+                            <th class="text-end">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminContactsTbody">
+                        <!-- Dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PHẦN 3: KHO 9 SIÊU XE -->
+        <div class="card p-4 mb-4 shadow-sm border rounded-3 bg-white" id="carsSection">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+                <h4 class="fw-bold text-dark mb-1">
+                    <i class="fa-solid fa-warehouse text-warning me-2"></i> Danh Mục 9 Siêu Xe Tại Showroom
+                </h4>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light small text-uppercase">
+                        <tr>
+                            <th>Mã</th>
+                            <th>Hình Ảnh</th>
+                            <th>Tên Xe</th>
+                            <th>Thương Hiệu</th>
+                            <th>Phân Khúc</th>
+                            <th>Giá Niêm Yết</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminCarsTbody">
+                        <!-- Dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const CARS_DATA = {
+            1: { name: "Mercedes-AMG GT 63 S E-Performance", brand: "Mercedes-Benz", category: "Sport", price: "12.500.000.000 ₫", img: "images/car-1.jpg" },
+            2: { name: "Porsche Taycan Turbo S Cross Turismo", brand: "Porsche", category: "EV", price: "8.900.000.000 ₫", img: "images/car-2.jpg" },
+            3: { name: "BMW M8 Competition Gran Coupe", brand: "BMW", category: "Sport", price: "11.200.000.000 ₫", img: "images/car-3.jpg" },
+            4: { name: "Audi RS e-tron GT Quattro", brand: "Audi", category: "EV", price: "7.800.000.000 ₫", img: "images/car-4.jpg" },
+            5: { name: "Mercedes-Maybach S 680 4MATIC", brand: "Mercedes-Benz", category: "Sedan", price: "15.900.000.000 ₫", img: "images/car-5.jpg" },
+            6: { name: "VinFast VF 9 Plus (Bản 6 Chỗ)", brand: "VinFast", category: "EV", price: "2.300.000.000 ₫", img: "images/car-6.jpg" },
+            7: { name: "Porsche 911 GT3 RS (Thế hệ 992)", brand: "Porsche", category: "Sport", price: "18.500.000.000 ₫", img: "images/car-7.jpg" },
+            8: { name: "Lexus LX 600 VIP (Bản 4 Chỗ)", brand: "Lexus", category: "SUV", price: "9.600.000.000 ₫", img: "images/car-8.jpg" },
+            9: { name: "Range Rover SV LWB P530", brand: "Land Rover", category: "SUV", price: "24.000.000.000 ₫", img: "images/car-9.jpg" }
+        };
+
+        const DEFAULT_BOOKINGS = [
+            { id: 101, name: "Nguyễn Hoàng Nam", phone: "0905 888 999", car: "Mercedes-AMG GT 63 S E-Performance", date: "2026-11-20 (14:30)", location: "Showroom AutoLux", status: "Chờ xác nhận" },
+            { id: 102, name: "Lê Trần Gia Bảo", phone: "0988 123 456", car: "Porsche 911 GT3 RS", date: "2026-11-21 (09:00)", location: "Giao xe tận nhà", status: "Đã duyệt" },
+            { id: 103, name: "Phạm Thúy Hằng", phone: "0912 345 678", car: "Lexus LX 600 VIP", date: "2026-11-22 (16:00)", location: "Showroom AutoLux", status: "Chờ xác nhận" }
+        ];
+
+        const DEFAULT_CONTACTS = [
+            { id: 201, name: "Trần Quang Huy", contact: "huy.tran@vip.vn - 0933 666 888", subject: "Yêu cầu cá nhân hóa nội thất Maybach", message: "Tôi muốn đặt thêm gói âm thanh Burmester High-End 4D và bọc da Nappa màu kem riêng.", time: "16/11/2026 14:20" },
+            { id: 202, name: "Vũ Hải Đăng", contact: "dangvu@corp.com - 0977 999 111", subject: "Tư vấn gói vay doanh nghiệp", message: "Bên công ty mình muốn mua 2 chiếc VF9 bản 6 chỗ, xin gửi bảng tiến độ giải ngân ngân hàng.", time: "15/11/2026 10:15" }
+        ];
+
+        function getStoredBookings() {
+            try {
+                const s = localStorage.getItem('autolux_bookings');
+                return s ? JSON.parse(s) : DEFAULT_BOOKINGS;
+            } catch(e) { return DEFAULT_BOOKINGS; }
+        }
+
+        function setStoredBookings(list) {
+            localStorage.setItem('autolux_bookings', JSON.stringify(list));
+        }
+
+        function getStoredContacts() {
+            try {
+                const s = localStorage.getItem('autolux_contacts');
+                return s ? JSON.parse(s) : DEFAULT_CONTACTS;
+            } catch(e) { return DEFAULT_CONTACTS; }
+        }
+
+        function setStoredContacts(list) {
+            localStorage.setItem('autolux_contacts', JSON.stringify(list));
+        }
+
+        function showToast(msg, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `p-3 rounded-3 shadow text-white mb-2 small d-flex align-items-center gap-2 ${type === 'success' ? 'bg-success' : type === 'warning' ? 'bg-warning text-dark' : 'bg-primary'}`;
+            toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        function renderAdmin() {
+            const bookings = getStoredBookings();
+            const contacts = getStoredContacts();
+
+            // Stats
+            document.getElementById('statTotalBookings').textContent = bookings.length;
+            const pendingB = bookings.filter(b => b.status === 'Chờ xác nhận').length;
+            const confirmedB = bookings.filter(b => b.status === 'Đã duyệt').length;
+            document.getElementById('statPendingBookings').textContent = pendingB;
+            document.getElementById('statConfirmedBookings').textContent = confirmedB;
+            document.getElementById('statPendingContacts').textContent = contacts.length;
+
+            // Bookings table
+            const bTbody = document.getElementById('adminBookingsTbody');
+            if (bookings.length === 0) {
+                bTbody.innerHTML = '<tr><td colspan="8" class="text-center py-4 text-muted">Chưa có lịch lái thử nào</td></tr>';
+            } else {
+                bTbody.innerHTML = bookings.map(b => `
+                    <tr>
+                        <td class="fw-bold text-muted">#BK-${b.id}</td>
+                        <td class="fw-bold text-dark">${b.name}</td>
+                        <td><a href="tel:${b.phone.replace(/\\s/g,'')}" class="text-decoration-none text-primary fw-bold">${b.phone}</a></td>
+                        <td><span class="badge bg-light text-dark border">${b.car}</span></td>
+                        <td><small class="text-muted"><i class="fa-regular fa-clock me-1"></i>${b.date}</small></td>
+                        <td><small>${b.location}</small></td>
+                        <td>
+                            <span class="badge ${b.status === 'Đã duyệt' ? 'bg-success' : 'bg-warning text-dark'}">
+                                ${b.status}
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            ${b.status !== 'Đã duyệt' ? `<button class="btn btn-sm btn-success me-1" onclick="approveBooking(${b.id})" title="Duyệt"><i class="fa-solid fa-check"></i> Duyệt</button>` : ''}
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteBooking(${b.id})" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Contacts table
+            const cTbody = document.getElementById('adminContactsTbody');
+            if (contacts.length === 0) {
+                cTbody.innerHTML = '<tr><td colspan="7" class="text-center py-4 text-muted">Chưa có phản hồi nào</td></tr>';
+            } else {
+                cTbody.innerHTML = contacts.map((c, idx) => `
+                    <tr>
+                        <td class="fw-bold text-muted">${idx + 1}</td>
+                        <td class="fw-bold text-dark">${c.name}</td>
+                        <td><small class="text-muted">${c.contact}</small></td>
+                        <td><span class="badge bg-primary bg-opacity-10 text-primary">${c.subject}</span></td>
+                        <td style="max-width:320px;"><small class="text-muted">${c.message}</small></td>
+                        <td><small class="text-muted">${c.time}</small></td>
+                        <td class="text-end">
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteContact(${c.id})" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Cars table
+            const carsTbody = document.getElementById('adminCarsTbody');
+            carsTbody.innerHTML = Object.keys(CARS_DATA).map(key => {
+                const car = CARS_DATA[key];
+                return `
+                    <tr>
+                        <td class="fw-bold text-muted">#CAR-${key}</td>
+                        <td><img src="${car.img}" alt="${car.name}" style="width:65px; height:45px; object-fit:cover; border-radius:6px;"></td>
+                        <td class="fw-bold text-dark">${car.name}</td>
+                        <td><span class="badge bg-light text-dark border">${car.brand}</span></td>
+                        <td><small class="text-uppercase text-muted">${car.category}</small></td>
+                        <td class="text-warning fw-bold">${car.price}</td>
+                        <td>
+                            <a href="detail.html?id=${key}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                <i class="fa-solid fa-eye me-1"></i> Xem Chi Tiết
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function approveBooking(id) {
+            const list = getStoredBookings();
+            const b = list.find(item => item.id == id);
+            if (b) {
+                b.status = "Đã duyệt";
+                setStoredBookings(list);
+                renderAdmin();
+                showToast(`Đã duyệt lịch hẹn của khách ${b.name}!`, "success");
+            }
+        }
+
+        function deleteBooking(id) {
+            let list = getStoredBookings();
+            list = list.filter(item => item.id != id);
+            setStoredBookings(list);
+            renderAdmin();
+            showToast("Đã xóa lịch lái thử khỏi danh sách.", "warning");
+        }
+
+        function resetBookings() {
+            setStoredBookings(DEFAULT_BOOKINGS);
+            setStoredContacts(DEFAULT_CONTACTS);
+            renderAdmin();
+            showToast("Đã khôi phục dữ liệu mẫu thành công!", "success");
+        }
+
+        function deleteContact(id) {
+            let list = getStoredContacts();
+            list = list.filter(item => item.id != id);
+            setStoredContacts(list);
+            renderAdmin();
+            showToast("Đã xóa tin nhắn tư vấn.", "warning");
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem('autolux_admin_session');
+            window.location.href = 'login.html';
+        }
+
+        // Khởi động
+        renderAdmin();
+    </script>
+</body>
+</html>
