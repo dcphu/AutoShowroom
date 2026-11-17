@@ -1,0 +1,10 @@
+# NetBeans and build artifacts
+build/
+nbproject/private/
+
+# Keep the compiled WAR file in dist/ for Dockerfile
+!dist/AutoShowroom.war
+
+# OS metadata
+Thumbs.db
+.DS_Store
