@@ -29,30 +29,38 @@ public class HomeServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
 
-        CategoryDao categoryDao = Database.getCategoryDao();
-        CarDao carDao = Database.getCarDao();
-
         String category = request.getParameter("category");
         String brand = request.getParameter("brand");
         String keyword = request.getParameter("keyword");
         String priceRange = request.getParameter("priceRange");
 
+        // Nếu có tham số tìm kiếm/lọc gửi tới /home, chuyển tiếp sang SearchServlet xử lý
+        if ((category != null && !category.isEmpty() && !"all".equalsIgnoreCase(category))
+                || (brand != null && !brand.isEmpty() && !"all".equalsIgnoreCase(brand))
+                || (keyword != null && !keyword.trim().isEmpty())
+                || (priceRange != null && !priceRange.isEmpty() && !"all".equalsIgnoreCase(priceRange))) {
+            request.getRequestDispatcher("/search").forward(request, response);
+            return;
+        }
+
+        CategoryDao categoryDao = Database.getCategoryDao();
+        CarDao carDao = Database.getCarDao();
+
         List<Category> lstCategory = categoryDao.findAll();
-        List<Car> filteredCars = carDao.filter(category, brand, keyword, priceRange);
         List<Car> allCars = carDao.findAll();
         List<Car> featuredCars = carDao.findFeatured();
         List<String> brands = carDao.getBrands();
 
         request.setAttribute("lstCategory", lstCategory);
         request.setAttribute("categories", lstCategory);
-        request.setAttribute("cars", filteredCars);
+        request.setAttribute("cars", allCars);
         request.setAttribute("allCars", allCars);
         request.setAttribute("featuredCars", featuredCars);
         request.setAttribute("brands", brands);
-        request.setAttribute("selectedCategory", category != null ? category : "all");
-        request.setAttribute("selectedBrand", brand != null ? brand : "all");
-        request.setAttribute("selectedPriceRange", priceRange != null ? priceRange : "all");
-        request.setAttribute("keyword", keyword != null ? keyword : "");
+        request.setAttribute("selectedCategory", "all");
+        request.setAttribute("selectedBrand", "all");
+        request.setAttribute("selectedPriceRange", "all");
+        request.setAttribute("keyword", "");
 
         // Flash Toast message từ Session
         HttpSession session = request.getSession();
@@ -73,4 +81,3 @@ public class HomeServlet extends HttpServlet {
         doGet(request, response);
     }
 }
-

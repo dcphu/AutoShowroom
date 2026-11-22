@@ -108,7 +108,7 @@
     <!-- Filter & Search Section -->
     <section class="container" id="collection" style="margin-top: -20px;">
         <div class="filter-card">
-            <form action="${pageContext.request.contextPath}/home#collection" method="GET" class="row g-3 align-items-center">
+            <form action="${pageContext.request.contextPath}/search#collection" method="GET" class="row g-3 align-items-center">
                 <!-- Search Box -->
                 <div class="col-lg-4 col-md-6">
                     <div class="input-group">
@@ -154,12 +154,12 @@
 
             <!-- Category Pills Đọc Từ CategoryDao -->
             <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-secondary border-opacity-25">
-                <a href="${pageContext.request.contextPath}/home?category=all&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
+                <a href="${pageContext.request.contextPath}/search?category=all&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
                    class="category-pill ${selectedCategory == 'all' || empty selectedCategory ? 'active' : ''}">
                     <i class="fa-solid fa-border-all"></i> Tất cả các dòng
                 </a>
                 <c:forEach items="${lstCategory}" var="cat">
-                    <a href="${pageContext.request.contextPath}/home?category=${cat.slug}&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
+                    <a href="${pageContext.request.contextPath}/search?category=${cat.slug}&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
                        class="category-pill ${selectedCategory == cat.slug ? 'active' : ''}">
                         <i class="${cat.icon != null ? cat.icon : 'fa-solid fa-car'} text-warning"></i> ${cat.name}
                     </a>
