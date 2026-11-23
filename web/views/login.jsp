@@ -56,7 +56,7 @@
                             <i class="fa-solid fa-user-tie"></i>
                         </span>
                         <input type="text" name="username" class="form-control input-bright" 
-                               placeholder="Nhập tên đăng nhập (admin)" required autofocus>
+                               placeholder="Nhập tên tài khoản nội bộ" required autofocus autocomplete="off">
                     </div>
                 </div>
 

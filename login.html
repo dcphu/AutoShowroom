@@ -107,7 +107,7 @@
                             <i class="fa-solid fa-user-tie"></i>
                         </span>
                         <input type="text" id="loginUsername" class="form-control input-bright"
-                            placeholder="Nhập tên đăng nhập (admin)" value="admin" required autofocus>
+                            placeholder="Nhập tên tài khoản nội bộ" value="" required autofocus autocomplete="off">
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
                             <i class="fa-solid fa-key"></i>
                         </span>
                         <input type="password" id="loginPassword" class="form-control input-bright"
-                            placeholder="Nhập mật khẩu" value="admin123" required>
+                            placeholder="Nhập mật khẩu" value="" required autocomplete="off">
                         <button class="btn btn-outline-secondary border" type="button" id="togglePassBtn"
                             onclick="togglePassVisibility()" title="Ẩn/Hiện mật khẩu">
                             <i class="fa-solid fa-eye" id="togglePassIcon"></i>
@@ -254,7 +254,7 @@
                 sessionStorage.removeItem('autolux_redirect_after_login');
                 window.location.href = target;
             } else {
-                alertText.textContent = 'Tài khoản hoặc mật khẩu không chính xác! Hãy dùng admin / admin123';
+                alertText.textContent = 'Tên tài khoản hoặc mật khẩu không chính xác!';
                 alertBox.className = 'alert alert-danger d-flex align-items-center mb-4 py-2 px-3 small';
             }
         }
