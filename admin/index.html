@@ -9,7 +9,7 @@
             var session = sessionStorage.getItem('autolux_admin_session');
             if (!session) {
                 sessionStorage.setItem('autolux_redirect_after_login', '../admin.html');
-                window.location.replace('../login.html?notice=unauthorized');
+                window.location.replace('../login.html');
             } else {
                 window.location.replace('../admin.html');
             }
