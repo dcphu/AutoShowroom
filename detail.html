@@ -23,16 +23,18 @@
     <div id="toastContainer" class="toast-container-custom" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
 
     <!-- Top Announcement Bar -->
-    <div class="top-bar-light py-2">
+    <div class="top-bar-light py-1">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center small">
-                <div class="d-flex align-items-center gap-3">
-                    <span><i class="fa-solid fa-location-dot text-warning me-1"></i> Hệ thống Showroom: Hà Nội • Đà Nẵng • TP. HCM</span>
-                    <span class="d-none d-md-inline text-muted">• Giờ mở cửa: 08:00 - 21:00 hàng ngày</span>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="d-none d-sm-inline"><i class="fa-solid fa-location-dot text-warning me-1"></i> Hà Nội • Đà Nẵng • TP. HCM</span>
+                    <span class="d-sm-none"><i class="fa-solid fa-location-dot text-warning me-1"></i> 3 Showroom</span>
+                    <span class="d-none d-lg-inline text-muted">• Mở cửa: 08:00 - 21:00</span>
                 </div>
-                <div class="d-flex align-items-center gap-3">
-                    <a href="tel:1900888999" class="text-decoration-none text-dark fw-bold">
-                        <i class="fa-solid fa-phone text-warning me-1"></i> Hotline CSKH: 1900 888 999
+                <div>
+                    <a href="tel:1900888999" class="text-decoration-none text-dark fw-bold small">
+                        <i class="fa-solid fa-phone text-warning me-1"></i>
+                        <span class="d-none d-sm-inline">Hotline: </span>1900 888 999
                     </a>
                 </div>
             </div>
@@ -49,23 +51,25 @@
                 <div>AUTOLUX <span class="highlight">MOTORS</span></div>
             </a>
             
-            <button class="navbar-toggler border-secondary text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="fa-solid fa-bars"></i>
+            <button class="navbar-toggler border-0 text-dark p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-expanded="false">
+                <i class="fa-solid fa-bars fs-5"></i>
             </button>
             
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-0">
                     <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#collection">Bộ Sưu Tập Xe</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#collection">Bộ Sưu Tập</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#features">Đặc Quyền</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#calculator">Tính Trả Góp</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#booking">Đăng Ký Lái Thử</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#calculator">Trả Góp</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#booking">Lái Thử</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html#contact">Liên Hệ</a></li>
                 </ul>
                 
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
                     <a href="#bookingModal" data-bs-toggle="modal" class="btn-gold">
-                        <i class="fa-solid fa-key"></i> Đặt Lái Thử Mẫu Này
+                        <i class="fa-solid fa-key"></i>
+                        <span class="d-none d-xl-inline">Đặt Lái Thử Mẫu Này</span>
+                        <span class="d-xl-none">Lái Thử</span>
                     </a>
                 </div>
             </div>

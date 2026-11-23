@@ -97,11 +97,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar Phong Cách Sáng Sang Trọng (White Luxury Glass) */
 .navbar-luxury {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid #e2e8f0;
-  padding: 16px 0;
+  padding: 10px 0;
   transition: var(--transition);
   z-index: 1030;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -140,10 +140,37 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link-luxury {
   color: #475569 !important;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 8px 18px !important;
+  font-size: 0.875rem;
+  padding: 7px 11px !important;
   transition: var(--transition);
   border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-link-luxury {
+    font-size: 0.82rem;
+    padding: 6px 9px !important;
+  }
+  .btn-gold {
+    font-size: 0.82rem;
+    padding: 9px 16px;
+  }
+  .brand-logo {
+    font-size: 1.1rem;
+    gap: 8px;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-luxury {
+    padding: 8px 0;
+  }
 }
 
 .nav-link-luxury:hover,
