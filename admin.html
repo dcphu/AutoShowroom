@@ -16,6 +16,17 @@
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Custom Style -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Auth Guard: Bắt buộc đăng nhập trước khi xem dữ liệu quản trị -->
+    <script>
+        (function() {
+            var session = sessionStorage.getItem('autolux_admin_session');
+            if (!session) {
+                sessionStorage.setItem('autolux_redirect_after_login', 'admin.html');
+                window.location.replace('login.html?notice=unauthorized');
+            }
+        })();
+    </script>
 </head>
 <body class="admin-light-body">
 
@@ -538,6 +549,12 @@
 
         // Khởi chạy khi load trang
         document.addEventListener('DOMContentLoaded', function () {
+            try {
+                var s = JSON.parse(sessionStorage.getItem('autolux_admin_session') || '{}');
+                if (s.name && document.getElementById('adminStaffName')) {
+                    document.getElementById('adminStaffName').innerText = s.name + ' (Admin)';
+                }
+            } catch (e) {}
             renderAdminDashboard();
         });
     </script>
