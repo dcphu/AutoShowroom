@@ -150,6 +150,82 @@ public class CarImpl implements CarDao {
             "Xe Grand Tourer thực thụ: 335 km/h trên đường thẳng nhưng vẫn có thể thong dong qua phố. Nội thất ốp gỗ thủ công Briar và da thuộc Mulliner cao cấp nhất.",
             false
         ));
+
+        // === ĐIỆN (electric) ===
+        list.add(new Car(
+            14, "BMW iX M60 xDrive", "BMW", "electric",
+            5490000000L, 5900000000L, "Dual Motor AWD - Hệ dẫn động 4 bánh toàn thời gian",
+            "619 mã lực / 1.100 Nm", "3.8 giây (0-100 km/h)", "Truyền động tự động 1 cấp trực tiếp",
+            "250 km/h", "Pin 111.5 kWh (566 km/lần sạc WLTP)",
+            "images/car-14.jpg",
+            "Flagship Điện BMW",
+            "SUV điện đỉnh cao của BMW kết hợp sức mạnh M thuần chủng với bền vững tương lai. Sạc nhanh DC 200kW đầy pin từ 10% lên 80% chỉ trong 35 phút.",
+            true
+        ));
+        list.add(new Car(
+            15, "Mercedes-Benz EQS 580 4MATIC", "Mercedes-Benz", "electric",
+            6200000000L, 6700000000L, "Dual Motor AMG Line EQ 400V",
+            "523 mã lực / 855 Nm", "4.3 giây (0-100 km/h)", "Hộp số tự động 1 cấp",
+            "210 km/h", "Pin 107.8 kWh (770 km/lần sạc WLTP)",
+            "images/car-15.jpg",
+            "Xe Điện Hạng Sang",
+            "Sedan điện xa xỉ nhất từ trước đến nay của Mercedes-Benz. Màn hình Hyperscreen 56 inch trải dài toàn bảng táp lô và cabin cách âm vượt trội nhờ cửa kiính 2 lớp.",
+            false
+        ));
+
+        // === XE SANG (luxury) ===
+        list.add(new Car(
+            16, "Bentley Flying Spur W12 S", "Bentley", "luxury",
+            24500000000L, 25800000000L, "6.0L W12 TSI Twin-Turbocharged",
+            "635 mã lực / 900 Nm", "3.8 giây (0-100 km/h)", "DCT 8 cấp ZF",
+            "318 km/h", "Dung tích bình 90L",
+            "images/car-16.jpg",
+            "Sport Luxury",
+            "Sedan siêu sang có thể phi như siêu xe. Tích hợp hệ thống treo khí nén Bentley Dynamic Ride chống nghiêng thân chủ động, mang lại sự thoải mái hoàng gia dù chạy nhanh.",
+            true
+        ));
+        list.add(new Car(
+            17, "Maserati Quattroporte Trofeo", "Maserati", "luxury",
+            12800000000L, 13500000000L, "3.8L V8 Twin-Turbo Ferrari-sourced",
+            "580 mã lực / 730 Nm", "3.5 giây (0-100 km/h)", "ZF 8 cấp tự động thể thao",
+            "326 km/h", "Xăng cao cấp RON 95+",
+            "images/car-17.jpg",
+            "Siêu Sedan Ý",
+            "Sedan sang trọng mang dòng máu Ferrari chính hiệu. Tiếng gầm V8 vang lừng tại 7.000 vòng/phút, ghế da Pieno Fiore thủ công Poltrona Frau và hệ thống treo Skyhook thích ứng.",
+            false
+        ));
+
+        // === SUV ===
+        list.add(new Car(
+            18, "Porsche Cayenne Turbo GT", "Porsche", "suv",
+            12200000000L, 12900000000L, "4.0L V8 Twin-Turbo nâng cấp",
+            "640 mã lực / 850 Nm", "3.3 giây (0-100 km/h)", "PDK 8 cấp tối ưu hóa đường đua",
+            "300 km/h", "Xăng tiêu chuẩn đường đua RON 98",
+            "images/car-18.jpg",
+            "SUV Đường Đua",
+            "SUV nhanh nhất của Porsche — thiết lập kỷ lục Nürburgring cho SUV sản xuất hàng loạt. Khung gầm hạ thấp 17mm, phanh ceramic PCCB và chương trình lái Porsche Torque Vectoring Plus.",
+            true
+        ));
+        list.add(new Car(
+            19, "BMW X7 M60i xDrive", "BMW", "suv",
+            7800000000L, 8200000000L, "4.4L V8 M TwinPower Turbo",
+            "530 mã lực / 750 Nm", "4.5 giây (0-100 km/h)", "Steptronic Sport 8 cấp",
+            "250 km/h", "Dung tích bình 83L",
+            "images/car-19.jpg",
+            "SUV Flagship",
+            "Flagship SUV 7 chỗ hạng sang hàng đầu của BMW với mặt lưới tản nhiệt kép khổng lồ biểu tượng. Ghế hàng hai massage 10 điểm, hệ thống giải trí Sky Lounge có trần panoramic LED.",
+            false
+        ));
+        list.add(new Car(
+            20, "Mercedes-AMG GLE 63 S 4MATIC+", "Mercedes-Benz", "suv",
+            8900000000L, 9400000000L, "4.0L V8 Biturbo AMG",
+            "612 mã lực / 850 Nm", "3.8 giây (0-100 km/h)", "AMG SPEEDSHIFT TCT 9G",
+            "280 km/h", "Hệ thống Mild Hybrid EQ Boost 48V",
+            "images/car-20.jpg",
+            "SUV AMG",
+            "GLE 63 S là SUV AMG đỉnh nhất — thú vị như xe đua nhưng thực dụng như SUV gia đình cao cấp. Hệ thống treo E-ACTIVE BODY CONTROL chống lắc thân hoàn toàn chủ động.",
+            false
+        ));
         return list;
     }
 
@@ -351,6 +427,6 @@ public class CarImpl implements CarDao {
     }
     @Override
     public List<String> getBrands() {
-        return Arrays.asList("Mercedes-Benz", "Porsche", "BMW", "Audi", "VinFast", "Lexus", "Land Rover", "Ferrari", "Lamborghini", "Rolls-Royce", "Bentley");
+        return Arrays.asList("Mercedes-Benz", "Porsche", "BMW", "Audi", "VinFast", "Lexus", "Land Rover", "Ferrari", "Lamborghini", "Rolls-Royce", "Bentley", "Maserati");
     }
 }
