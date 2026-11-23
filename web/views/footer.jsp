@@ -23,19 +23,19 @@
 
             <div class="col-lg-2 col-6">
                 <h6 class="text-white fw-bold mb-3">Thương Hiệu</h6>
-                <a href="${pageContext.request.contextPath}/home?brand=Mercedes-Benz#collection" class="footer-link">Mercedes-Benz</a>
-                <a href="${pageContext.request.contextPath}/home?brand=Porsche#collection" class="footer-link">Porsche Đức</a>
-                <a href="${pageContext.request.contextPath}/home?brand=BMW#collection" class="footer-link">BMW M-Power</a>
-                <a href="${pageContext.request.contextPath}/home?brand=Audi#collection" class="footer-link">Audi Quattro</a>
-                <a href="${pageContext.request.contextPath}/home?brand=VinFast#collection" class="footer-link">VinFast EV</a>
+                <a href="./search?brand=Mercedes-Benz#collection" class="footer-link">Mercedes-Benz</a>
+                <a href="./search?brand=Porsche#collection" class="footer-link">Porsche Đức</a>
+                <a href="./search?brand=BMW#collection" class="footer-link">BMW M-Power</a>
+                <a href="./search?brand=Audi#collection" class="footer-link">Audi Quattro</a>
+                <a href="./search?brand=VinFast#collection" class="footer-link">VinFast EV</a>
             </div>
 
             <div class="col-lg-2 col-6">
                 <h6 class="text-white fw-bold mb-3">Dịch Vụ</h6>
-                <a href="${pageContext.request.contextPath}/home#calculator" class="footer-link">Dự toán trả góp</a>
-                <a href="${pageContext.request.contextPath}/home#booking" class="footer-link">Đăng ký lái thử</a>
-                <a href="${pageContext.request.contextPath}/home#features" class="footer-link">Bảo dưỡng 5 sao</a>
-                <a href="${pageContext.request.contextPath}/home#features" class="footer-link">Cứu hộ giao thông</a>
+                <a href="./home#calculator" class="footer-link">Dự toán trả góp</a>
+                <a href="./home#booking" class="footer-link">Đăng ký lái thử</a>
+                <a href="./home#features" class="footer-link">Bảo dưỡng 5 sao</a>
+                <a href="./home#features" class="footer-link">Cứu hộ giao thông</a>
             </div>
 
             <div class="col-lg-4">
@@ -56,7 +56,7 @@
             <div class="d-flex gap-4 mt-2 mt-md-0 align-items-center">
                 <a href="#" class="text-white-50 text-decoration-none">Chính sách bảo mật</a>
                 <a href="#" class="text-white-50 text-decoration-none">Điều khoản dịch vụ</a>
-                <a href="${pageContext.request.contextPath}/login" class="text-white-50 text-decoration-none small" style="opacity: 0.65;" title="Khu vực dành riêng cho nhân viên Showroom">
+                <a href="./login" class="text-white-50 text-decoration-none small" style="opacity: 0.65;" title="Khu vực dành riêng cho nhân viên Showroom">
                     <i class="fa-solid fa-lock me-1"></i> Cổng nội bộ
                 </a>
             </div>

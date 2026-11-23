@@ -12,9 +12,9 @@
     <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="$./assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Custom Clean Professional Automotive Styling -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="bg-light">
 
@@ -27,12 +27,12 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 small">
                     <li class="breadcrumb-item">
-                        <a href="${pageContext.request.contextPath}/home" class="text-decoration-none text-muted">
+                        <a href="./home" class="text-decoration-none text-muted">
                             <i class="fa-solid fa-house me-1"></i> Trang Chủ
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="${pageContext.request.contextPath}/home#collection" class="text-decoration-none text-muted">Bộ Sưu Tập Xe</a>
+                        <a href="./home#collection" class="text-decoration-none text-muted">Bộ Sưu Tập Xe</a>
                     </li>
                     <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">${car.name}</li>
                 </ol>
@@ -159,7 +159,7 @@
 
                         <!-- Nút hành động -->
                         <div class="d-grid gap-2">
-                            <a href="${pageContext.request.contextPath}/home#booking" class="btn btn-gold py-3 fw-bold text-center shadow-sm">
+                            <a href="./home#booking" class="btn btn-gold py-3 fw-bold text-center shadow-sm">
                                 <i class="fa-solid fa-key me-2"></i> Đăng Ký Lái Thử Mẫu Xe Này
                             </a>
                             <a href="tel:1900888999" class="btn btn-outline-dark py-2 fw-semibold text-center">
@@ -177,7 +177,7 @@
                         <span class="text-warning text-uppercase fw-bold small">GỢI Ý TƯƠNG TỰ</span>
                         <h3 class="fw-bold text-dark mt-1 mb-0">Các Dòng Xe Khác Cùng Showroom</h3>
                     </div>
-                    <a href="${pageContext.request.contextPath}/home#collection" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                    <a href="./home#collection" class="btn btn-outline-primary btn-sm rounded-pill px-3">
                         Xem tất cả xe <i class="fa-solid fa-arrow-right ms-1"></i>
                     </a>
                 </div>
@@ -200,10 +200,10 @@
                                             <div class="car-price">${rel.formattedPrice}</div>
                                         </div>
                                         <div class="d-flex gap-2 mt-2">
-                                            <a href="${pageContext.request.contextPath}/car-detail?id=${rel.id}" class="btn btn-outline-gold btn-sm w-50 text-center">
+                                            <a href="./car-detail?id=${rel.id}" class="btn btn-outline-gold btn-sm w-50 text-center">
                                                 <i class="fa-solid fa-circle-info me-1"></i> Chi tiết
                                             </a>
-                                            <a href="${pageContext.request.contextPath}/home#booking" class="btn btn-gold btn-sm w-50 justify-content-center text-center">
+                                            <a href="./home#booking" class="btn btn-gold btn-sm w-50 justify-content-center text-center">
                                                 <i class="fa-solid fa-key me-1"></i> Lái thử
                                             </a>
                                         </div>
@@ -221,7 +221,7 @@
     <jsp:include page="footer.jsp" />
 
     <!-- Bootstrap 5 JS -->
-    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
     
     <!-- Custom Clean Professional Automotive Styling -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
@@ -83,7 +83,7 @@
                 <div class="col-lg-6">
                     <div class="hero-visual">
                         <div class="hero-car-wrapper">
-                            <img src="${pageContext.request.contextPath}/images/car-1.jpg" 
+                            <img src="./images/car-1.jpg" 
                                  alt="Mercedes-AMG GT 63 S" class="hero-car-img">
                         </div>
                         
@@ -108,7 +108,7 @@
     <!-- Filter & Search Section -->
     <section class="container" id="collection" style="margin-top: -20px;">
         <div class="filter-card">
-            <form action="${pageContext.request.contextPath}/search#collection" method="GET" class="row g-3 align-items-center">
+            <form action="./search#collection" method="GET" class="row g-3 align-items-center">
                 <!-- Search Box -->
                 <div class="col-lg-4 col-md-6">
                     <div class="input-group">
@@ -154,12 +154,12 @@
 
             <!-- Category Pills Đọc Từ CategoryDao -->
             <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-secondary border-opacity-25">
-                <a href="${pageContext.request.contextPath}/search?category=all&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
+                <a href="./search?category=all&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
                    class="category-pill ${selectedCategory == 'all' || empty selectedCategory ? 'active' : ''}">
                     <i class="fa-solid fa-border-all"></i> Tất cả các dòng
                 </a>
                 <c:forEach items="${lstCategory}" var="cat">
-                    <a href="${pageContext.request.contextPath}/search?category=${cat.slug}&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
+                    <a href="./search?category=${cat.slug}&brand=${selectedBrand}&priceRange=${selectedPriceRange}&keyword=${keyword}#collection" 
                        class="category-pill ${selectedCategory == cat.slug ? 'active' : ''}">
                         <i class="${cat.icon != null ? cat.icon : 'fa-solid fa-car'} text-warning"></i> ${cat.name}
                     </a>
@@ -189,7 +189,7 @@
                     <div class="display-1 text-warning mb-3"><i class="fa-solid fa-car-tunnel"></i></div>
                     <h4 class="text-dark fw-bold">Không tìm thấy mẫu xe nào phù hợp với bộ lọc</h4>
                     <p class="text-secondary">Vui lòng thử lại với từ khóa khác hoặc xóa bộ lọc để xem toàn bộ xe.</p>
-                    <a href="${pageContext.request.contextPath}/home#collection" class="btn-gold mt-3">
+                    <a href="./home#collection" class="btn-gold mt-3">
                         <i class="fa-solid fa-arrow-rotate-left"></i> Xem Tất Cả Xe
                     </a>
                 </div>
@@ -244,7 +244,7 @@
                                 </div>
 
                                 <div class="d-flex gap-2 mt-2">
-                                    <a href="${pageContext.request.contextPath}/car-detail?id=${car.id}" class="btn btn-outline-gold btn-sm w-50 text-center">
+                                    <a href="./car-detail?id=${car.id}" class="btn btn-outline-gold btn-sm w-50 text-center">
                                         <i class="fa-solid fa-circle-info me-1"></i> Chi tiết
                                     </a>
                                     <a href="#booking" class="btn btn-gold btn-sm w-50 justify-content-center btn-quick-book"
@@ -506,7 +506,7 @@
                         </div>
 
                         <!-- Form gửi về Java Servlet BookingServlet -->
-                        <form id="bookingForm" action="${pageContext.request.contextPath}/booking" method="POST">
+                        <form id="bookingForm" action="./booking" method="POST">
                             <div class="row g-4">
                                 <!-- Họ và tên -->
                                 <div class="col-md-6">
@@ -729,7 +729,7 @@
                         <h4 class="mb-2">Gửi Lời Nhắn Đến Ban Quản Trị</h4>
                         <p class="small mb-4">Quý khách có nhu cầu đặt hàng cấu hình cá nhân hóa riêng hoặc trao đổi mua bán, xin để lại lời nhắn:</p>
 
-                        <form id="contactForm" action="${pageContext.request.contextPath}/contact" method="POST">
+                        <form id="contactForm" action="./contact" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold" style="color: #1e293b;">Họ và tên *</label>
@@ -768,7 +768,7 @@
     <jsp:include page="footer.jsp" />
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         if (typeof bootstrap === 'undefined') {
             document.write('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>');
@@ -776,6 +776,6 @@
     </script>
     
     <!-- Main Interaction Logic -->
-    <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

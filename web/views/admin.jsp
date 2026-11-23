@@ -11,9 +11,9 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Bootstrap 5 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Custom Style -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="admin-light-body">
 
@@ -36,9 +36,9 @@
     <!-- Navbar Quản Trị Sáng Sủa Chuyên Nghiệp -->
     <nav class="navbar navbar-expand-lg admin-light-navbar sticky-top">
         <div class="container-fluid px-4">
-            <a class="brand-logo text-decoration-none" href="${pageContext.request.contextPath}/admin">
+            <a class="brand-logo text-decoration-none" href="./admin">
                 <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="brand-text">AUTOLUX <span class="highlight">BẢNG QUẢN TRỊ</span></div>
+                <div class="brand-text">AUTOLUX <span class="highlight">MORTORS</span></div>
             </a>
             
             <div class="d-flex align-items-center gap-3 ms-auto">
@@ -52,11 +52,11 @@
                     </div>
                 </div>
 
-                <a href="${pageContext.request.contextPath}/home" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                <a href="./home" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
                     <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Xem Showroom
                 </a>
 
-                <a href="${pageContext.request.contextPath}/logout" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+                <a href="./logout" class="btn btn-outline-danger btn-sm rounded-pill px-3">
                     <i class="fa-solid fa-power-off me-1"></i> Đăng Xuất
                 </a>
             </div>
@@ -230,7 +230,7 @@
                                             </div>
                                         </c:when>
                                         <c:otherwise>
-                                            <form action="${pageContext.request.contextPath}/admin" method="POST" class="d-flex align-items-center gap-1 justify-content-center">
+                                            <form action="./admin" method="POST" class="d-flex align-items-center gap-1 justify-content-center">
                                                 <input type="hidden" name="action" value="updateStatus">
                                                 <input type="hidden" name="bookingId" value="${b.id}">
                                                 
@@ -357,7 +357,7 @@
         <div class="modal fade" id="replyModal${c.id}" tabindex="-1" aria-labelledby="modalLabel${c.id}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content admin-modal-light border-0 shadow">
-                    <form action="${pageContext.request.contextPath}/admin" method="POST">
+                    <form action="./admin" method="POST">
                         <input type="hidden" name="action" value="replyContact">
                         <input type="hidden" name="contactId" value="${c.id}">
 
@@ -417,6 +417,6 @@
     </c:forEach>
 
     <!-- Bootstrap 5 JS -->
-    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

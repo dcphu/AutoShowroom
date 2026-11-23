@@ -10,9 +10,9 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Bootstrap 5 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Custom Style -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
@@ -26,9 +26,6 @@
                 <div class="brand-icon mx-auto mb-3" style="width: 50px; height: 50px; font-size: 1.35rem;">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <span class="admin-login-badge mb-2">
-                    <i class="fa-solid fa-lock me-1"></i> Cổng Nội Bộ Showroom
-                </span>
                 <h3 class="text-dark fw-bold mt-2 mb-1">Đăng Nhập Quản Trị</h3>
                 <p class="text-muted small mb-0">Hệ thống xử lý khách hàng AutoLux Motors</p>
             </div>
@@ -51,7 +48,7 @@
             </c:if>
 
             <!-- Form Đăng Nhập Chỉn Chu -->
-            <form action="${pageContext.request.contextPath}/login" method="POST" autocomplete="off">
+            <form action="./login" method="POST" autocomplete="off">
                 <div class="mb-3">
                     <label class="form-label text-dark small fw-bold mb-1">Tài khoản nhân viên</label>
                     <div class="input-group">
@@ -83,7 +80,7 @@
             </form>
             <!-- Trở về trang showroom -->
             <div class="text-center pt-2 border-top">
-                <a href="${pageContext.request.contextPath}/home" class="text-decoration-none text-muted small fw-semibold">
+                <a href="./home" class="text-decoration-none text-muted small fw-semibold">
                     <i class="fa-solid fa-arrow-left me-1"></i> Quay về giao diện Showroom bán xe
                 </a>
             </div>
@@ -94,6 +91,6 @@
     <jsp:include page="footer.jsp" />
 
     <!-- Bootstrap 5 JS -->
-    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
