@@ -28,12 +28,10 @@ public class AdminServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
-        // Kiểm tra quyền nội bộ
+        // Kiểm tra quyền nội bộ: Ngăn chặn gõ trực tiếp link admin, đẩy về trang chủ showroom nếu chưa đăng nhập
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("adminUser") == null) {
-            HttpSession newSession = request.getSession(true);
-            newSession.setAttribute("loginNotice", "Khu vực nội bộ dành cho nhân viên Showroom! Vui lòng đăng nhập để tiếp tục.");
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/home");
             return;
         }
 
