@@ -17,13 +17,12 @@
     <!-- Custom Style -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Auth Guard: Bắt buộc đăng nhập trước khi xem dữ liệu quản trị -->
+    <!-- Auth Guard: Ngăn chặn gõ admin link - nếu chưa đăng nhập, lập tức đẩy về trang chủ index.html -->
     <script>
         (function() {
             var session = sessionStorage.getItem('autolux_admin_session');
             if (!session) {
-                sessionStorage.setItem('autolux_redirect_after_login', 'admin.html');
-                window.location.replace('login.html');
+                window.location.replace('index.html');
             }
         })();
     </script>
