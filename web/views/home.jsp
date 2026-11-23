@@ -526,8 +526,11 @@
                                         <span class="input-group-text input-group-text-bright">
                                             <i class="fa-solid fa-phone"></i>
                                         </span>
-                                        <input type="tel" name="phone" class="form-control input-bright" placeholder="Ví dụ: 0905 123 456" required>
+                                        <input type="tel" name="phone" class="form-control input-bright"
+                                            placeholder="Ví dụ: 0905123456" pattern="0[0-9]{9}" maxlength="10"
+                                            title="Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0" required>
                                     </div>
+                                    <div class="form-text text-muted small">Phải gồm đúng 10 chữ số bắt đầu bằng số 0</div>
                                 </div>
 
                                 <!-- Email -->
@@ -537,8 +540,12 @@
                                         <span class="input-group-text input-group-text-bright">
                                             <i class="fa-solid fa-envelope"></i>
                                         </span>
-                                        <input type="email" name="email" class="form-control input-bright" placeholder="an.nguyen@company.com">
+                                        <input type="email" name="email" class="form-control input-bright"
+                                            placeholder="Ví dụ: an.nguyen@gmail.com"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                            title="Email phải có ký tự @ và đuôi tên miền (Ví dụ: an.nguyen@gmail.com)">
                                     </div>
+                                    <div class="form-text text-muted small">Định dạng email hợp lệ có @ và đuôi tên miền</div>
                                 </div>
 
                                 <!-- Xe Lái Thử -->
@@ -737,11 +744,18 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold" style="color: #1e293b;">Số điện thoại *</label>
-                                    <input type="tel" name="phone" class="form-control input-bright" placeholder="0908 123 456" required>
+                                    <input type="tel" name="phone" class="form-control input-bright"
+                                        placeholder="Ví dụ: 0908123456" pattern="0[0-9]{9}" maxlength="10"
+                                        title="Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0" required>
+                                    <div class="form-text text-muted small">Đúng 10 số bắt đầu bằng 0</div>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold" style="color: #1e293b;">Email liên hệ</label>
-                                    <input type="email" name="email" class="form-control input-bright" placeholder="nam.tran@company.com">
+                                    <input type="email" name="email" class="form-control input-bright"
+                                        placeholder="Ví dụ: nam.tran@gmail.com"
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                        title="Email phải có ký tự @ và đuôi tên miền (Ví dụ: nam.tran@gmail.com)">
+                                    <div class="form-text text-muted small">Email phải có @ và đuôi tên miền</div>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold" style="color: #1e293b;">Tiêu đề yêu cầu</label>

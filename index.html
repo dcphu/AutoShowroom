@@ -2292,8 +2292,10 @@
                                         <span class="input-group-text input-group-text-bright"><i
                                                 class="fa-solid fa-phone"></i></span>
                                         <input type="tel" id="bPhone" class="form-control input-bright"
-                                            placeholder="Ví dụ: 0905 123 456" required>
+                                            placeholder="Ví dụ: 0905123456" pattern="0[0-9]{9}" maxlength="10"
+                                            title="Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0" required>
                                     </div>
+                                    <div class="form-text text-muted small">Phải gồm đúng 10 chữ số bắt đầu bằng số 0</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Email Nhận Báo Giá</label>
@@ -2301,8 +2303,11 @@
                                         <span class="input-group-text input-group-text-bright"><i
                                                 class="fa-solid fa-envelope"></i></span>
                                         <input type="email" id="bEmail" class="form-control input-bright"
-                                            placeholder="an.nguyen@company.com">
+                                            placeholder="Ví dụ: an.nguyen@gmail.com"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                            title="Email phải chứa ký tự @ và tên miền (Ví dụ: an.nguyen@gmail.com)">
                                     </div>
+                                    <div class="form-text text-muted small">Định dạng email hợp lệ có @ và đuôi tên miền</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Dòng Xe Muốn Lái Thử</label>
@@ -2478,12 +2483,17 @@
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">Số điện thoại *</label>
                                     <input type="tel" id="cPhone" class="form-control input-bright"
-                                        placeholder="0908 123 456" required>
+                                        placeholder="Ví dụ: 0908123456" pattern="0[0-9]{9}" maxlength="10"
+                                        title="Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0" required>
+                                    <div class="form-text text-muted small">Đúng 10 số bắt đầu bằng 0</div>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Email liên hệ</label>
                                     <input type="email" id="cEmail" class="form-control input-bright"
-                                        placeholder="nam.tran@company.com">
+                                        placeholder="Ví dụ: nam.tran@gmail.com"
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                        title="Email phải chứa ký tự @ và tên miền (Ví dụ: nam.tran@gmail.com)">
+                                    <div class="form-text text-muted small">Email phải có @ và đuôi tên miền</div>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Tiêu đề yêu cầu</label>
@@ -3488,6 +3498,22 @@
             const name = document.getElementById('bFullName').value.trim();
             const phone = document.getElementById('bPhone').value.trim();
             const email = document.getElementById('bEmail') ? document.getElementById('bEmail').value.trim() : '';
+
+            // Kiểm tra số điện thoại: Đúng 10 số và bắt đầu bằng số 0
+            const cleanPhone = phone.replace(/\s+/g, '');
+            if (!/^0\d{9}$/.test(cleanPhone)) {
+                showToast('Số điện thoại không hợp lệ! Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0 (Ví dụ: 0905123456).', 'danger');
+                document.getElementById('bPhone').focus();
+                return;
+            }
+
+            // Kiểm tra email: Phải có @ và đuôi tên miền
+            if (email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                showToast('Email không hợp lệ! Email phải chứa ký tự "@" và phần đuôi tên miền (Ví dụ: example@gmail.com).', 'danger');
+                document.getElementById('bEmail').focus();
+                return;
+            }
+
             const carSelect = document.getElementById('bookingCarSelect');
             const carName = carSelect.selectedIndex > 0 ? carSelect.options[carSelect.selectedIndex].text : "Tư vấn dòng xe phù hợp";
             const dateVal = document.getElementById('bDate').value || new Date().toISOString().split('T')[0];
@@ -3499,7 +3525,7 @@
                 id: list.length > 0 ? Math.max(...list.map(b => b.id || 0)) + 1 : 1,
                 fullName: name,
                 email: email,
-                phone: phone,
+                phone: cleanPhone,
                 carName: carName,
                 bookingDate: dateVal,
                 bookingTime: timeVal,
@@ -3522,12 +3548,27 @@
             const subject = document.getElementById('cSubject').value.trim() || "Tư vấn cấu hình xe";
             const message = document.getElementById('cMessage') ? document.getElementById('cMessage').value.trim() : "Quý khách có nhu cầu tư vấn đặc quyền.";
 
+            // Kiểm tra số điện thoại: Đúng 10 số và bắt đầu bằng số 0
+            const cleanPhone = phone.replace(/\s+/g, '');
+            if (!/^0\d{9}$/.test(cleanPhone)) {
+                showToast('Số điện thoại không hợp lệ! Số điện thoại phải gồm đúng 10 số và bắt đầu bằng số 0 (Ví dụ: 0905123456).', 'danger');
+                document.getElementById('cPhone').focus();
+                return;
+            }
+
+            // Kiểm tra email: Phải có @ và đuôi tên miền
+            if (email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                showToast('Email không hợp lệ! Email phải chứa ký tự "@" và phần đuôi tên miền (Ví dụ: example@gmail.com).', 'danger');
+                document.getElementById('cEmail').focus();
+                return;
+            }
+
             const list = getStoredContacts();
             const newContact = {
                 id: list.length > 0 ? Math.max(...list.map(c => c.id || 0)) + 1 : 1,
                 fullName: name,
                 email: email,
-                phone: phone,
+                phone: cleanPhone,
                 subject: subject,
                 message: message,
                 createdAt: new Date().toLocaleString('vi-VN'),

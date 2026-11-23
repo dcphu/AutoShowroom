@@ -173,6 +173,25 @@ function initBookingFormAjax() {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
+        const phoneInput = form.querySelector('input[name="phone"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        const phone = phoneInput ? phoneInput.value.trim().replace(/\s+/g, '') : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+
+        // Validate SĐT: đúng 10 số bắt đầu bằng 0
+        if (!/^0\d{9}$/.test(phone)) {
+            showToast('Số điện thoại không hợp lệ! Vui lòng nhập đúng 10 số bắt đầu bằng số 0 (Ví dụ: 0905123456).', 'danger');
+            if (phoneInput) phoneInput.focus();
+            return;
+        }
+
+        // Validate Email: có @ và đuôi tên miền
+        if (email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            showToast('Email không hợp lệ! Email phải chứa ký tự "@" và đuôi tên miền hợp lệ (Ví dụ: example@gmail.com).', 'danger');
+            if (emailInput) emailInput.focus();
+            return;
+        }
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
@@ -215,6 +234,25 @@ function initContactFormAjax() {
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        const phoneInput = form.querySelector('input[name="phone"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        const phone = phoneInput ? phoneInput.value.trim().replace(/\s+/g, '') : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+
+        // Validate SĐT: đúng 10 số bắt đầu bằng 0
+        if (!/^0\d{9}$/.test(phone)) {
+            showToast('Số điện thoại không hợp lệ! Vui lòng nhập đúng 10 số bắt đầu bằng số 0 (Ví dụ: 0905123456).', 'danger');
+            if (phoneInput) phoneInput.focus();
+            return;
+        }
+
+        // Validate Email: có @ và đuôi tên miền
+        if (email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            showToast('Email không hợp lệ! Email phải chứa ký tự "@" và đuôi tên miền hợp lệ (Ví dụ: example@gmail.com).', 'danger');
+            if (emailInput) emailInput.focus();
+            return;
+        }
 
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
