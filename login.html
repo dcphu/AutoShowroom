@@ -215,6 +215,24 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Kiểm tra xem đã có phiên đăng nhập chưa hoặc có thông báo chuyển hướng bảo mật
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('notice') === 'unauthorized') {
+                const alertBox = document.getElementById('loginAlertBox');
+                const alertText = document.getElementById('loginAlertText');
+                if (alertBox && alertText) {
+                    alertText.innerHTML = '<strong>Cổng bảo mật nội bộ!</strong> Vui lòng đăng nhập tài khoản quản trị để truy cập trang quản lý.';
+                    alertBox.className = 'alert alert-warning d-flex align-items-center mb-4 py-2 px-3 small';
+                }
+            } else if (sessionStorage.getItem('autolux_admin_session')) {
+                // Đã đăng nhập rồi thì cho vào luôn
+                const target = sessionStorage.getItem('autolux_redirect_after_login') || 'admin.html';
+                sessionStorage.removeItem('autolux_redirect_after_login');
+                window.location.replace(target);
+            }
+        });
+
         function togglePassVisibility() {
             const passInput = document.getElementById('loginPassword');
             const passIcon = document.getElementById('togglePassIcon');
@@ -240,11 +258,12 @@
                     name: 'Dương Chí Phú',
                     loginTime: new Date().toISOString()
                 }));
-                window.location.href = 'admin.html';
+                const target = sessionStorage.getItem('autolux_redirect_after_login') || 'admin.html';
+                sessionStorage.removeItem('autolux_redirect_after_login');
+                window.location.href = target;
             } else {
                 alertText.textContent = 'Tài khoản hoặc mật khẩu không chính xác! Hãy dùng admin / admin123';
-                alertBox.classList.remove('d-none');
-                alertBox.classList.add('d-flex');
+                alertBox.className = 'alert alert-danger d-flex align-items-center mb-4 py-2 px-3 small';
             }
         }
     </script>
