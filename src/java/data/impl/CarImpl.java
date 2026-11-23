@@ -110,6 +110,46 @@ public class CarImpl implements CarDao {
             "Vua của thế giới SUV quý tộc Anh Quốc. Chiều dài cơ sở siêu lớn, nội thất ốp gốm men thủ công và tủ lạnh mini đựng rượu sâm panh.",
             false
         ));
+        list.add(new Car(
+            10, "Ferrari Roma Spider", "Ferrari", "sport",
+            18500000000L, 19200000000L, "3.9L V8 Twin-Turbo F154",
+            "620 mã lực / 760 Nm", "3.4 giây (0-100 km/h)", "Hộp số ly hợp kép DCT 8 cấp",
+            "318 km/h", "Xăng cao cấp RON 98",
+            "images/car-10.jpg",
+            "Siêu Phẩm Ý",
+            "Mui trần sang trọng mang phong cách La Mã cổ điển pha lẫn hiện đại. Hệ thống mái vải điện tử đóng mở trong 13.5 giây, trải nghiệm cabin đẳng cấp Ferrari chính hiệu.",
+            true
+        ));
+        list.add(new Car(
+            11, "Lamborghini Urus Performante", "Lamborghini", "suv",
+            16800000000L, 17400000000L, "4.0L V8 Twin-Turbocharged",
+            "666 mã lực / 850 Nm", "3.3 giây (0-100 km/h)", "ZF 8 cấp tự động thể thao",
+            "306 km/h", "Xăng tiêu chuẩn đường đua",
+            "images/car-11.jpg",
+            "SUV Siêu Xe",
+            "SUV nhanh nhất thế giới tại thời điểm ra mắt. Khung gầm carbon-fibre siêu nhẹ, hệ thống Lamborghini Dynamic Steering và phanh carbon-ceramic CCBM tùy chọn.",
+            true
+        ));
+        list.add(new Car(
+            12, "Rolls-Royce Ghost Extended", "Rolls-Royce", "luxury",
+            35000000000L, 36500000000L, "6.75L V12 Twin-Turbo Black Badge",
+            "571 mã lực / 850 Nm", "4.5 giây (0-100 km/h)", "ZF 8-Speed tự động cực êm",
+            "250 km/h", "Xăng không chì chuẩn Anh",
+            "images/car-12.jpg",
+            "Đỉnh Hào Môn",
+            "Trải nghiệm đẳng cấp vô song dành cho những ai vượt lên trên mọi thứ xa xỉ. Trần xe chứa 1.344 ngôi sao lấy cảm hứng từ bầu trời đêm Spire Mountain.",
+            false
+        ));
+        list.add(new Car(
+            13, "Bentley Continental GT Speed", "Bentley", "sport",
+            22000000000L, 23000000000L, "6.0L W12 TSI Twin-Turbocharged",
+            "659 mã lực / 900 Nm", "3.6 giây (0-100 km/h)", "DCT 8 cấp ZF SportShift",
+            "335 km/h", "Dung tích bình 90L xăng cao cấp",
+            "images/car-13.jpg",
+            "Grand Tourer",
+            "Xe Grand Tourer thực thụ: 335 km/h trên đường thẳng nhưng vẫn có thể thong dong qua phố. Nội thất ốp gỗ thủ công Briar và da thuộc Mulliner cao cấp nhất.",
+            false
+        ));
         return list;
     }
 
@@ -196,16 +236,89 @@ public class CarImpl implements CarDao {
 
     @Override
     public List<Car> filter(String category, String brand, String keyword, String priceRange) {
-        List<Car> all = findAll();
-        return all.stream().filter(car -> {
+        List<Car> list = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("SELECT * FROM cars WHERE 1=1");
+        List<Object> params = new ArrayList<>();
+
+        if (category != null && !category.trim().isEmpty() && !category.equalsIgnoreCase("all")) {
+            sql.append(" AND LOWER(category) = ?");
+            params.add(category.trim().toLowerCase());
+        }
+
+        if (brand != null && !brand.trim().isEmpty() && !brand.equalsIgnoreCase("all")) {
+            sql.append(" AND LOWER(brand) = ?");
+            params.add(brand.trim().toLowerCase());
+        }
+
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            sql.append(" AND (LOWER(name) LIKE ? OR LOWER(brand) LIKE ? OR LOWER(description) LIKE ?)");
+            String kw = "%" + keyword.trim().toLowerCase() + "%";
+            params.add(kw);
+            params.add(kw);
+            params.add(kw);
+        }
+
+        if (priceRange != null && !priceRange.trim().isEmpty() && !priceRange.equalsIgnoreCase("all")) {
+            switch (priceRange) {
+                case "under3b":
+                    sql.append(" AND price < ?");
+                    params.add(3000000000L);
+                    break;
+                case "3b-7b":
+                    sql.append(" AND price >= ? AND price <= ?");
+                    params.add(3000000000L);
+                    params.add(7000000000L);
+                    break;
+                case "7b-11b":
+                    sql.append(" AND price > ? AND price <= ?");
+                    params.add(7000000000L);
+                    params.add(11000000000L);
+                    break;
+                case "above11b":
+                    sql.append(" AND price > ?");
+                    params.add(11000000000L);
+                    break;
+            }
+        }
+
+        sql.append(" ORDER BY id ASC");
+
+        try (Connection con = MySQLDriver.getConnection()) {
+            if (con == null) {
+                return filterInMemory(defaultCars(), category, brand, keyword, priceRange);
+            }
+            try (PreparedStatement ps = con.prepareStatement(sql.toString())) {
+                for (int i = 0; i < params.size(); i++) {
+                    Object param = params.get(i);
+                    if (param instanceof Long) {
+                        ps.setLong(i + 1, (Long) param);
+                    } else {
+                        ps.setString(i + 1, param.toString());
+                    }
+                }
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        list.add(extractCar(rs));
+                    }
+                }
+            }
+            return list;
+        } catch (Exception e) {
+            System.err.println("[CarImpl] Lỗi filter từ MySQL: " + e.getMessage());
+            return filterInMemory(defaultCars(), category, brand, keyword, priceRange);
+        }
+    }
+
+    private List<Car> filterInMemory(List<Car> source, String category, String brand, String keyword, String priceRange) {
+        return source.stream().filter(car -> {
             boolean match = true;
 
             if (category != null && !category.trim().isEmpty() && !category.equalsIgnoreCase("all")) {
-                match = match && car.getCategory().equalsIgnoreCase(category.trim());
+                match = match && car.getCategory() != null && car.getCategory().equalsIgnoreCase(category.trim());
             }
 
             if (brand != null && !brand.trim().isEmpty() && !brand.equalsIgnoreCase("all")) {
-                match = match && car.getBrand().equalsIgnoreCase(brand.trim());
+                match = match && car.getBrand() != null && car.getBrand().equalsIgnoreCase(brand.trim());
             }
 
             if (keyword != null && !keyword.trim().isEmpty()) {
@@ -236,9 +349,8 @@ public class CarImpl implements CarDao {
             return match;
         }).collect(Collectors.toList());
     }
-
     @Override
     public List<String> getBrands() {
-        return Arrays.asList("Mercedes-Benz", "Porsche", "BMW", "Audi", "VinFast", "Lexus", "Land Rover");
+        return Arrays.asList("Mercedes-Benz", "Porsche", "BMW", "Audi", "VinFast", "Lexus", "Land Rover", "Ferrari", "Lamborghini", "Rolls-Royce", "Bentley");
     }
 }
