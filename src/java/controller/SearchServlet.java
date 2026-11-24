@@ -55,7 +55,7 @@ public class SearchServlet extends HttpServlet {
         request.setAttribute("keyword", keyword != null ? keyword : "");
 
         // Hiển thị kết quả tìm kiếm ra giao diện home.jsp
-        request.getRequestDispatcher("/views/client/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
 
     @Override

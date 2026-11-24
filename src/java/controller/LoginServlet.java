@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        request.getRequestDispatcher("/views/admin/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/login.jsp").forward(request, response);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/admin");
         } else {
             request.setAttribute("errorMessage", "Tài khoản hoặc mật khẩu không chính xác! Vui lòng thử lại.");
-            request.getRequestDispatcher("/views/admin/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/login.jsp").forward(request, response);
         }
     }
 }

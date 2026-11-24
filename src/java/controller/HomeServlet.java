@@ -72,7 +72,7 @@ public class HomeServlet extends HttpServlet {
         }
 
         // Chuyển hướng hiển thị ra views/home.jsp theo cấu trúc yêu cầu
-        request.getRequestDispatcher("/views/client/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/home.jsp").forward(request, response);
     }
 
     @Override

@@ -63,7 +63,7 @@ public class AdminServlet extends HttpServlet {
             session.removeAttribute("toastType");
         }
 
-        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin.jsp").forward(request, response);
     }
 
     @Override
