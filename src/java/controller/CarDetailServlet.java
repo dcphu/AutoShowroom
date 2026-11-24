@@ -58,7 +58,7 @@ public class CarDetailServlet extends HttpServlet {
         request.setAttribute("categories", categories);
         request.setAttribute("allCars", relatedCars);
 
-        request.getRequestDispatcher("/views/detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/client/detail.jsp").forward(request, response);
     }
 }
 
