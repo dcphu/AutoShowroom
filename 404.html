@@ -10,22 +10,21 @@
             var hash = window.location.hash || '';
 
             if (pathname.includes('/admin/login') || pathname.includes('/login')) {
-                window.location.replace('admin/login.html' + search + hash);
+                window.location.replace('deploy/admin/login.html' + search + hash);
             } else if (pathname.includes('/admin')) {
                 var session = sessionStorage.getItem('autolux_admin_session');
                 if (!session) {
-                    window.location.replace('admin/login.html');
+                    window.location.replace('deploy/admin/login.html');
                 } else {
-                    window.location.replace('admin/index.html' + search + hash);
+                    window.location.replace('deploy/admin/index.html' + search + hash);
                 }
             } else if (pathname.includes('/detail')) {
-                window.location.replace('client/detail.html' + search + hash);
+                window.location.replace('deploy/client/detail.html' + search + hash);
             } else {
-                window.location.replace('client/index.html' + search + hash);
+                window.location.replace('deploy/client/index.html' + search + hash);
             }
         })();
     </script>
 </head>
-<body style="background: #ffffff; margin: 0;">
-</body>
+<body style="background: #ffffff; margin: 0;"></body>
 </html>
