@@ -83,7 +83,7 @@
                 <div class="col-lg-6">
                     <div class="hero-visual">
                         <div class="hero-car-wrapper">
-                            <img src="./images/car-1.jpg" 
+                            <img src="./assets/images/car-1.jpg" 
                                  alt="Mercedes-AMG GT 63 S" class="hero-car-img">
                         </div>
                         
