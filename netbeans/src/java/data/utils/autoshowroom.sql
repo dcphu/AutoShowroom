@@ -1,6 +1,11 @@
--- Script khởi tạo Database autoshowroom cho Hệ thống Showroom Ô Tô AutoLux
+-- Script khoi tao Database autoshowroom cho He thong Showroom O To AutoLux
+SET FOREIGN_KEY_CHECKS = 0;
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 CREATE DATABASE IF NOT EXISTS autoshowroom CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE autoshowroom;
+
 
 -- 1. Bảng Danh mục xe (Categories)
 DROP TABLE IF EXISTS categories;
@@ -132,3 +137,5 @@ INSERT INTO bookings (customer_name, phone, email, car_id, showroom_location, bo
 INSERT INTO contacts (fullname, phone, email, subject, message, status) VALUES
 ('Trần Quang Huy', '0933 666 888', 'huy.tran@vip.vn', 'Yêu cầu cá nhân hóa nội thất Maybach', 'Tôi muốn đặt thêm gói âm thanh Burmester High-End 4D và bọc da Nappa màu kem riêng.', 'Đã phản hồi'),
 ('Vũ Hải Đăng', '0977 999 111', 'dangvu@corp.com', 'Tư vấn gói vay doanh nghiệp', 'Bên công ty mình muốn mua 2 chiếc VF9 bản 6 chỗ, xin gửi bảng tiến độ giải ngân ngân hàng.', 'Chưa phản hồi');
+
+SET FOREIGN_KEY_CHECKS = 1;

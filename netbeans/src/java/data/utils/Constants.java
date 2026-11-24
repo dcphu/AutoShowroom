@@ -10,7 +10,7 @@ public class Constants {
     // Cấu hình kết nối MySQL: Hỗ trợ linh hoạt biến môi trường (Docker / Cloud / VPS) và mặc định Localhost
     public static final String DB_URL = System.getenv("DB_URL") != null && !System.getenv("DB_URL").trim().isEmpty()
             ? System.getenv("DB_URL").trim()
-            : "jdbc:mysql://localhost:3306/autoshowroom?useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Ho_Chi_Minh";
+            : "jdbc:mysql://localhost:3306/autoshowroom?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Ho_Chi_Minh";
 
     public static final String USER = System.getenv("DB_USER") != null && !System.getenv("DB_USER").trim().isEmpty()
             ? System.getenv("DB_USER").trim()

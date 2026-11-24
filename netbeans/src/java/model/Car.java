@@ -76,7 +76,12 @@ public class Car implements Serializable {
     public void setTopSpeed(String topSpeed) { this.topSpeed = topSpeed; }
     public String getRangeOrFuel() { return rangeOrFuel; }
     public void setRangeOrFuel(String rangeOrFuel) { this.rangeOrFuel = rangeOrFuel; }
-    public String getImageUrl() { return imageUrl; }
+    public String getImageUrl() {
+        if (imageUrl != null && imageUrl.startsWith("images/")) {
+            return "assets/" + imageUrl;
+        }
+        return imageUrl;
+    }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public List<String> getGallery() { return gallery; }
     public void setGallery(List<String> gallery) { this.gallery = gallery; }

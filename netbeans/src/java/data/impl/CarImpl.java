@@ -18,6 +18,10 @@ import java.util.List;
 public class CarImpl implements CarDao {
 
     private Car extractCar(ResultSet rs) throws Exception {
+        String img = rs.getString("image_url");
+        if (img != null && img.startsWith("images/")) {
+            img = "assets/" + img;
+        }
         return new Car(
             rs.getInt("id"),
             rs.getString("name"),
@@ -31,7 +35,7 @@ public class CarImpl implements CarDao {
             rs.getString("transmission"),
             rs.getString("top_speed"),
             rs.getString("range_or_fuel"),
-            rs.getString("image_url"),
+            img,
             rs.getString("badge"),
             rs.getString("description"),
             rs.getBoolean("is_featured")
