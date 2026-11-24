@@ -8,15 +8,15 @@
     <script>
         (function() {
             var pathname = window.location.pathname.toLowerCase();
-            if (pathname.includes('/admin')) {
+            if (pathname.includes('/login')) {
+                window.location.replace('admin/login.html');
+            } else if (pathname.includes('/admin')) {
                 var session = sessionStorage.getItem('autolux_admin_session');
                 if (!session) {
                     window.location.replace('index.html');
                 } else {
-                    window.location.replace('admin.html');
+                    window.location.replace('admin/');
                 }
-            } else if (pathname.includes('/login')) {
-                window.location.replace('login.html');
             } else if (pathname.includes('/detail')) {
                 window.location.replace('detail.html' + window.location.search);
             } else {
