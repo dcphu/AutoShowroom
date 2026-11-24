@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoLux Motors</title>
-    <!-- Bộ định tuyến thông minh GitHub Pages: Phân luồng Admin & Khách Hàng -->
+    <title>AutoLux</title>
+    <!-- Điều hướng GitHub Pages: Ngăn chặn gõ /admin trực tiếp nếu chưa đăng nhập -->
     <script>
         (function() {
             var pathname = window.location.pathname.toLowerCase();
-            var search = window.location.search || '';
-            var hash = window.location.hash || '';
-
-            if (pathname.includes('/admin/login') || pathname.includes('/login')) {
-                window.location.replace('admin/login.html' + search + hash);
+            if (pathname.includes('/login')) {
+                window.location.replace('admin/login.html');
             } else if (pathname.includes('/admin')) {
                 var session = sessionStorage.getItem('autolux_admin_session');
                 if (!session) {
-                    window.location.replace('admin/login.html');
+                    window.location.replace('index.html');
                 } else {
-                    window.location.replace('admin/index.html' + search + hash);
+                    window.location.replace('admin/');
                 }
             } else if (pathname.includes('/detail')) {
-                window.location.replace('client/detail.html' + search + hash);
+                window.location.replace('detail.html' + window.location.search);
             } else {
-                window.location.replace('client/index.html' + search + hash);
+                window.location.replace('index.html');
             }
         })();
     </script>
 </head>
-<body style="background: #0f172a; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
-    <p>Đang chuyển hướng hệ thống AutoLux Motors...</p>
+<body style="background: #0f172a;">
 </body>
 </html>
