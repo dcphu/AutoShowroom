@@ -30,14 +30,7 @@
                 <p class="text-muted small mb-0">Hệ thống xử lý khách hàng AutoLux Motors</p>
             </div>
 
-            <!-- Thông báo nếu bị chặn khi chưa đăng nhập -->
-            <c:if test="${not empty sessionScope.loginNotice}">
-                <div class="alert alert-warning py-2 px-3 small d-flex align-items-center gap-2 mb-3 border-0">
-                    <i class="fa-solid fa-triangle-exclamation text-warning"></i>
-                    <span class="text-dark fw-bold">${sessionScope.loginNotice}</span>
-                </div>
-                <c:remove var="loginNotice" scope="session"/>
-            </c:if>
+
 
             <!-- Thông báo lỗi khi sai mật khẩu -->
             <c:if test="${not empty errorMessage}">
