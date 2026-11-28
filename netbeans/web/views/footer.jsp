@@ -62,5 +62,9 @@
             </div>
         </div>
     </div>
+
+    <!-- AutoLux AI Concierge Chatbot Widget -->
+    <link rel="stylesheet" href="./assets/css/chatbot.css">
+    <script src="./assets/js/chatbot.js"></script>
 </footer>
 
