@@ -42,11 +42,17 @@ public class CarService {
             List<Predicate> predicates = new ArrayList<>();
 
             if (category != null && !category.trim().isEmpty() && !"all".equalsIgnoreCase(category)) {
-                predicates.add(cb.equal(cb.lower(root.get("category")), category.trim().toLowerCase()));
+                String catLower = category.trim().toLowerCase();
+                Predicate exactCategory = cb.equal(cb.lower(root.get("category")), catLower);
+                Predicate likeCategory = cb.like(cb.lower(root.get("category")), "%" + catLower + "%");
+                predicates.add(cb.or(exactCategory, likeCategory));
             }
 
             if (brand != null && !brand.trim().isEmpty() && !"all".equalsIgnoreCase(brand)) {
-                predicates.add(cb.equal(cb.lower(root.get("brand")), brand.trim().toLowerCase()));
+                String brandLower = brand.trim().toLowerCase();
+                Predicate exactBrand = cb.equal(cb.lower(root.get("brand")), brandLower);
+                Predicate likeBrand = cb.like(cb.lower(root.get("brand")), "%" + brandLower + "%");
+                predicates.add(cb.or(exactBrand, likeBrand));
             }
 
             if (keyword != null && !keyword.trim().isEmpty()) {

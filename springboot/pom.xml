@@ -21,6 +21,8 @@
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <start-class>com.autolux.showroom.AutoShowroomApplication</start-class>
+        <exec.mainClass>com.autolux.showroom.AutoShowroomApplication</exec.mainClass>
     </properties>
 
     <dependencies>
@@ -55,13 +57,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- H2 In-Memory Database (Fallback & Testing) -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- Spring Boot DevTools (Hot reload during development) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,6 +78,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.autolux.showroom.AutoShowroomApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <mainClass>com.autolux.showroom.AutoShowroomApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

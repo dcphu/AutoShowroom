@@ -15,6 +15,6 @@ public interface CarRepository extends JpaRepository<Car, Integer>, JpaSpecifica
 
     List<Car> findByCategoryIgnoreCase(String category);
 
-    @Query("SELECT DISTINCT c.brand FROM Car c ORDER BY c.brand ASC")
+    @Query("SELECT DISTINCT c.brand FROM Car c WHERE c.brand IS NOT NULL AND TRIM(c.brand) != '' ORDER BY c.brand ASC")
     List<String> findDistinctBrands();
 }

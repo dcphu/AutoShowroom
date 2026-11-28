@@ -173,10 +173,23 @@ public class Car implements Serializable {
     }
 
     public String getImageUrl() {
-        if (imageUrl != null && imageUrl.startsWith("images/")) {
-            return "assets/" + imageUrl;
+        if (imageUrl == null || imageUrl.trim().isEmpty()) {
+            return "assets/images/car-1.jpg";
         }
-        return imageUrl;
+        String path = imageUrl.trim();
+        if (path.startsWith("http://") || path.startsWith("https://")) {
+            return path;
+        }
+        if (path.startsWith("/")) {
+            path = path.substring(1);
+        }
+        if (path.startsWith("images/")) {
+            return "assets/" + path;
+        }
+        if (!path.startsWith("assets/")) {
+            return "assets/images/" + path;
+        }
+        return path;
     }
 
     public void setImageUrl(String imageUrl) {

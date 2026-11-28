@@ -27,7 +27,6 @@ public class BookingController {
     }
 
     @PostMapping("/booking")
-    @ResponseBody
     public Object handleBooking(@RequestParam(required = false) String fullName,
                                 @RequestParam(required = false) String phone,
                                 @RequestParam(required = false) String email,

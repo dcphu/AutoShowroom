@@ -45,7 +45,7 @@
                     <div class="position-sticky" style="top: 100px;">
                         <div class="bg-white p-3 rounded-4 border shadow-sm mb-3">
                             <div class="position-relative rounded-3 overflow-hidden" style="height: 440px;">
-                                <img th:src="${car.imageUrl != null and car.imageUrl.startsWith('http') ? car.imageUrl : @{/{path}(path=${car.imageUrl})}}" 
+                                <img th:src="${car.imageUrl != null and car.imageUrl.startsWith('http')} ? ${car.imageUrl} : @{|/${car.imageUrl}|}" 
                                      th:alt="${car.name}" class="w-100 h-100 object-fit-cover" id="mainCarDetailImg">
                                 <span th:if="${car.badge != null and !car.badge.isEmpty()}" 
                                       class="position-absolute top-0 start-0 m-3 badge bg-warning text-dark fs-6 px-3 py-2 fw-bold shadow-sm">
@@ -186,7 +186,7 @@
                         <div th:if="${rel.id != car.id and iter.index < 4}" class="col-md-4">
                             <div class="car-card shadow-sm h-100">
                                 <div class="car-thumb-wrap">
-                                    <img th:src="${rel.imageUrl != null and rel.imageUrl.startsWith('http') ? rel.imageUrl : @{/{path}(path=${rel.imageUrl})}}" 
+                                    <img th:src="${rel.imageUrl != null and rel.imageUrl.startsWith('http')} ? ${rel.imageUrl} : @{|/${rel.imageUrl}|}" 
                                          th:alt="${rel.name}" class="car-thumb">
                                     <span th:if="${rel.badge != null and !rel.badge.isEmpty()}" class="car-badge" th:text="${rel.badge}">Badge</span>
                                 </div>

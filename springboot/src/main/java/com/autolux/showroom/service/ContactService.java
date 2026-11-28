@@ -50,7 +50,7 @@ public class ContactService {
     }
 
     public long countPending() {
-        return contactRepository.findByStatus("Chưa phản hồi").size();
+        return contactRepository.countByStatus("Chưa phản hồi");
     }
 
     public ContactMessage save(ContactMessage c) {

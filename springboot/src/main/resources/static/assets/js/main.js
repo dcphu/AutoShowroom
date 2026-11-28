@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initContactFormAjax();
     initCategoryPills();
     initStaffSecretShortcut();
+    initPasswordToggle();
 });
 
 // 1. Navbar Scrolled State
@@ -354,20 +355,22 @@ function showToast(message, type = 'success') {
     }, 6000);
 }
 
-        // Toggle ẩn/hiện mật khẩu
-        const toggleBtn = document.getElementById('togglePassBtn');
-        const passInput = document.getElementById('adminPassword');
-        const passIcon = document.getElementById('togglePassIcon');
-        if (toggleBtn && passInput) {
-            toggleBtn.addEventListener('click', function () {
-                if (passInput.type === 'password') {
-                    passInput.type = 'text';
-                    passIcon.classList.remove('fa-eye');
-                    passIcon.classList.add('fa-eye-slash');
-                } else {
-                    passInput.type = 'password';
-                    passIcon.classList.remove('fa-eye-slash');
-                    passIcon.classList.add('fa-eye');
-                }
-            });
-        }
+// 9. Toggle an/hien mat khau
+function initPasswordToggle() {
+    const toggleBtn = document.getElementById('togglePassBtn');
+    const passInput = document.getElementById('adminPassword');
+    const passIcon = document.getElementById('togglePassIcon');
+    if (toggleBtn && passInput && passIcon) {
+        toggleBtn.addEventListener('click', function () {
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                passIcon.classList.remove('fa-eye');
+                passIcon.classList.add('fa-eye-slash');
+            } else {
+                passInput.type = 'password';
+                passIcon.classList.remove('fa-eye-slash');
+                passIcon.classList.add('fa-eye');
+            }
+        });
+    }
+}

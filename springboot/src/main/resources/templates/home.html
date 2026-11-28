@@ -147,12 +147,12 @@
 
             <!-- Category Pills -->
             <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-secondary border-opacity-25">
-                <a th:href="@{/search(category='all', brand=${selectedBrand}, priceRange=${selectedPriceRange}, keyword=${keyword}) + '#collection'}" 
+                <a th:href="@{/search#collection(category='all', brand=${selectedBrand}, priceRange=${selectedPriceRange}, keyword=${keyword})}" 
                    th:class="'category-pill ' + (${selectedCategory == 'all' or selectedCategory == null or selectedCategory == ''} ? 'active' : '')">
                     <i class="fa-solid fa-border-all"></i> Tất cả các dòng
                 </a>
                 <a th:each="cat : ${categories}"
-                   th:href="@{/search(category=${cat.slug}, brand=${selectedBrand}, priceRange=${selectedPriceRange}, keyword=${keyword}) + '#collection'}" 
+                   th:href="@{/search#collection(category=${cat.slug}, brand=${selectedBrand}, priceRange=${selectedPriceRange}, keyword=${keyword})}" 
                    th:class="'category-pill ' + (${selectedCategory == cat.slug} ? 'active' : '')">
                     <i th:class="${cat.icon != null ? cat.icon : 'fa-solid fa-car'} + ' text-warning'"></i> <span th:text="${cat.name}">Category</span>
                 </a>
@@ -171,7 +171,7 @@
                     <h2 class="text-dark fw-bold mt-1 mb-0">Các Dòng Xe Tuyển Chọn</h2>
                 </div>
                 <div class="text-dark small fw-bold">
-                    Hiển thị <span class="badge bg-warning text-dark fs-6 px-3 py-1 shadow-sm">${cars.size()}</span> mẫu xe cao cấp
+                    Hiển thị <span class="badge bg-warning text-dark fs-6 px-3 py-1 shadow-sm" th:text="${cars != null ? cars.size() : 0}">0</span> mẫu xe cao cấp
                 </div>
             </div>
 
@@ -186,11 +186,11 @@
             </div>
 
             <!-- Car Cards Grid -->
-            <div class="row g-4">
+            <div class="row g-4" th:if="${cars != null and !cars.isEmpty()}">
                 <div th:each="car : ${cars}" class="col-lg-4 col-md-6">
                     <div class="car-card">
                         <div class="car-thumb-wrap">
-                            <img th:src="${car.imageUrl != null and car.imageUrl.startsWith('http') ? car.imageUrl : @{/{path}(path=${car.imageUrl})}}" 
+                            <img th:src="${car.imageUrl != null and car.imageUrl.startsWith('http')} ? ${car.imageUrl} : @{|/${car.imageUrl}|}" 
                                  th:alt="${car.name}" class="car-thumb">
                             <span th:if="${car.badge != null and !car.badge.isEmpty()}" class="car-badge">
                                 <i class="fa-solid fa-fire text-warning me-1"></i> <span th:text="${car.badge}">Badge</span>
@@ -240,6 +240,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
                 </div>
             </div>
         </div>

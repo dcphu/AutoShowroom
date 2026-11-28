@@ -27,7 +27,6 @@ public class ContactController {
     }
 
     @PostMapping("/contact")
-    @ResponseBody
     public Object handleContact(@RequestParam(required = false) String fullName,
                                 @RequestParam(required = false) String phone,
                                 @RequestParam(required = false) String email,

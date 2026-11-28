@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 public class CarDetailController {
@@ -26,16 +28,21 @@ public class CarDetailController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping({"/car-detail", "/detail", "/detail/{id}"})
-    public String detail(@RequestParam(required = false) Integer id,
-                         @PathVariable(required = false) Integer pathId,
-                         Model model) {
+    @GetMapping({"/car-detail", "/detail"})
+    public String detailParam(@RequestParam(required = false) Integer id, Model model) {
+        return loadDetail(id, model);
+    }
 
-        Integer carId = id != null ? id : pathId;
+    @GetMapping("/detail/{id}")
+    public String detailPath(@PathVariable("id") Integer id, Model model) {
+        return loadDetail(id, model);
+    }
+
+    private String loadDetail(Integer id, Model model) {
         Car car = null;
 
-        if (carId != null) {
-            Optional<Car> opt = carService.findById(carId);
+        if (id != null) {
+            Optional<Car> opt = carService.findById(id);
             if (opt.isPresent()) {
                 car = opt.get();
             }
@@ -49,13 +56,30 @@ public class CarDetailController {
             }
         }
 
-        List<Car> relatedCars = carService.findAll();
+        List<Car> relatedCars = new ArrayList<>();
+        if (car != null) {
+            final Integer currentId = car.getId();
+            List<Car> categoryCars = carService.filter(car.getCategory(), null, null, null);
+            for (Car c : categoryCars) {
+                if (!c.getId().equals(currentId) && relatedCars.size() < 3) {
+                    relatedCars.add(c);
+                }
+            }
+            if (relatedCars.size() < 3) {
+                for (Car c : carService.findAll()) {
+                    if (!c.getId().equals(currentId) && !relatedCars.contains(c) && relatedCars.size() < 3) {
+                        relatedCars.add(c);
+                    }
+                }
+            }
+        }
+
         List<Category> categories = categoryService.findAll();
 
         model.addAttribute("car", car);
         model.addAttribute("relatedCars", relatedCars);
         model.addAttribute("categories", categories);
-        model.addAttribute("allCars", relatedCars);
+        model.addAttribute("allCars", carService.findAll());
 
         return "detail";
     }

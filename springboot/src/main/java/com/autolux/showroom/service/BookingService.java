@@ -67,11 +67,11 @@ public class BookingService {
     }
 
     public long countPending() {
-        return bookingRepository.findByStatus("Chờ xác nhận").size();
+        return bookingRepository.countByStatus("Chờ xác nhận");
     }
 
     public long countConfirmed() {
-        return bookingRepository.findByStatus("Đã xác nhận").size();
+        return bookingRepository.countByStatus("Đã xác nhận");
     }
 
     public BookingRequest save(BookingRequest b) {
